@@ -1,0 +1,1497 @@
+#module-header h2 {
+	padding: 5px 5px 5px 10px;
+	position: relative;
+	left: -25px;
+	top: -30px;
+	color: white;
+	min-width: 734px;
+	width: calc(100% + 35px);
+	/* Firefox */ width: -moz-calc(100% + 35px);
+	/* WebKit */  width: -webkit-calc(100% + 35px);
+	/* Opera */   width: -o-calc(100% + 35px);
+	font-size: 200%;
+	margin: 17px 0 0;
+	background-color: #aaa; 
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+    text-shadow: rgba(0, 0, 0, 0.85) 0 0 5px;
+}
+#module-header h2 i {
+	font-size: 200%;
+	background-color: #9cb861;
+	vertical-align:middle;
+	padding: 40px 10px 10px 10px;
+	top: -15px;
+	position: relative;
+	text-shadow: none;
+}
+
+#digital-tools-banner {
+	background-color: #9cb861; 
+	padding: 20px 20px 20px 115px; 
+	font-size: 300%; 
+	margin: 17px 0px 0px;
+	margin-bottom:8px; 
+	font-family: 'roboto slab', serif; color: #ffffff; 
+	text-align: left; 
+	background-position: 20px 50%; 
+	background-repeat: no-repeat;
+	background-image: url( "http://moodle.warwick.ac.uk/theme/warwickbase/tmce_temps/digi_tools/images/digital_tools_80.png")
+	/*background-image: url([[pix:theme|../tmce_temps/digi_tools/images/digital_tools_80]]);*/
+}
+
+h2#digital-tools-banner{
+	line-height:1.1;
+}
+
+
+h2#research-data {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/research_data_banner.jpg")50% 80%;
+}
+
+
+h2#open-access {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/open_access_banner.jpg")50% 50%;
+}
+
+h2#web-publishing {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/web_publishing_banner.jpg")50% 21%;
+}
+
+
+h2#multimedia {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/multimedia.jpg")50% 46%;
+}
+
+h2#online-identity {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/online_identity_banner.jpg")50% 36%;
+}
+
+h2#networking {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/networking_banner.jpg") 50% 36%;
+}
+
+h2#data-literacy {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/data_literacy_banner.png")50% 46%;
+}
+
+h2#collaboration {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/collaboration_banner.jpg") 40% 42%;
+}
+
+h2#current-awareness {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/current_awareness_banner.jpg") 50% 50%;
+	 }
+
+h2#getting-organised {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/getting_organised_banner.jpg")50% 60%;
+}
+
+/*i.fa {
+	min-width: 50px;
+	text-align: center;
+}*/
+
+h2.inverted {
+	color: #000 !important;
+	text-shadow: rgba(255, 255, 255,1) 0 0 5px;
+}
+
+#module-header table{
+	width: 100%;
+}
+#module-header table td {
+	width: 50%;
+	vertical-align: top;
+}
+#module-header p.description {
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+	font-style: italic;
+}
+
+/* 
+CSS for Digital Tools for Researcher Template Boxes
+Developed by Steve Ranford, 2013.
+
+Also including Page Curl CSS3.
+
+*/
+
+div.e_boxstyle_ {
+    margin: 1.5em 0 1.5em 0 ;
+    padding: 0.1em;
+}
+div.e_boxstyle_ div {
+    border: medium none;
+}
+div.e_boxstyle_ > div > div {
+    position: relative;
+}
+.e_boxstyle_ div.e_tile {
+    background: repeat-y scroll  -1.7em top transparent;
+    position: relative;
+}
+
+.e_boxstyle_ div.e_tl {
+    background:  no-repeat scroll left top transparent;
+}
+.e_boxstyle_ div.e_main {
+    padding: 1em;
+    border: solid 1px;
+}
+
+.e_boxstyle_ h3, .e_boxstyle_ h4, .e_boxstyle_ h5  {
+    margin-left: 0 !important;
+} 
+.e_boxstyle_ h3 {
+    font-size: 1.5em;
+    margin-top: 0.7em; /* adapted for moodle to align to the bottom of icons */
+    margin-bottom: 0.9em; /* adapted for moodle up from 0.5em on sitebuilder */
+    margin-left: 2.7em !important;
+} 
+.e_boxstyle_ p {
+    margin-left: 0 !important;
+} 
+
+.e_boxstyle_ .e_bookmark{
+	background: top left no-repeat; 
+	position: absolute;
+	top: -14px; 
+	left: 7px;
+	width: 47px;
+	height: 66px;
+	text-align: center;
+}
+
+/* extra bits for font-awesome based bookmarks */
+.e_boxstyle_ .e_bookmark .fa {
+	margin: auto;
+	font-size: 35px;
+	color: white;
+	text-align: center;
+	padding-top: 27px;
+	padding-left: 8px;
+}
+
+.e_boxstyle_ .e_main {z-index: 1 !important}
+
+/**** Example ****/
+
+.e_example div.e_tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/example_tile.png") }
+
+/theme/warwickclean/tmce_temps/template_images/whead1f_topright_bg.png
+
+.e_example div.e_bookmark { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/blue-top-bookmark.png")}
+.e_example div.e_main {border-color: #b8d0e6}
+.e_example h3, .e_example h4 {color: #316c76 !important}
+
+/**** Intro ****/
+
+.e_intro div.e_tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/intro_tile.png") }
+.e_intro div.e_bookmark { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/green-top-bookmark.png")}
+.e_intro div.e_main {border-color: #dfe9d6}
+.e_intro h3, .e_intro h4 {color: #2b7678 !important}
+
+/**** Clipboard ****/
+
+.e_clipboard div.e_tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/clipboard_tile.png") }
+.e_clipboard div.e_bookmark { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/brown-top-bookmark.png")}
+.e_clipboard div.e_main {border-color: #e2dcde}
+.e_clipboard  h3, .e_clipboard  h4 {color: #564148 !important}
+
+/**** Exercise ****/
+
+.e_exercise div.e_tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/exercise_tile.png") }
+.e_exercise div.e_bookmark { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/orange-top-bookmark.png")}
+.e_exercise div.e_main {border-color: #f1cb9f}
+.e_exercise h3, .e_exercise  h4 {color: #bf5647 !important}
+
+/**** Download ****/
+
+.e_download div.e_tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/download_tile.png") }
+.e_download div.e_bookmark { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/black-top-bookmark.png")}
+.e_download div.e_main {border-color: #D7D8DB}
+.e_download h3, .e_download h4 {color: #5C5460 !important}
+
+/**** Exercise ****/
+
+.e_folder div.e_tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/folder_tile.png") }
+.e_folder div.e_bookmark { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/pink-top-bookmark.png")}
+.e_folder div.e_main {border-color: #E5BCC0}
+.e_folder h3, .e_folder h4 {color: #7E5157 !important}
+
+/**** Quotes ****/
+
+.e_quotes div.e_tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/quotes_tile.png") }
+.e_quotes div.e_bookmark { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/aqua-top-bookmark.png")}
+.e_quotes div.e_main {border-color: #A3D3D8}
+.e_quotes h3, .e_quotes h4 {color: #326272 !important}
+
+/**** Links ****/
+
+.e_links div.e_tile { background-image: none }
+.e_links div.e_bookmark { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/grey-top-bookmark.png")}
+.e_links div.e_main {border-color: #fff}
+.e_links h3, .e_links h4 {color: #777 !important}
+
+/**** Resources RHS ****/
+
+#rhsContent .content {padding-right: 0px !important}
+
+.r-resource {background: #fff; margin-right: 18px; margin-bottom: 10px; padding-top: 10px !important;}
+.r-resource .r-link, .r-resource p, .r-resource .r-ratings {    display: block;    margin: 5px; padding-bottom: 5px }
+.r-resource p.r-student-review, .r-resource p.r-student-comment{    font-style: italic;    padding-left:5px;}
+.r-resource .r-ratings {    padding-left:5px;}
+.r-resource .r-link {position: relative; width: 90%; background: url('http://www2.warwick.ac.uk/static/services/skills/awp/academicwriting/mini-link.png') top right no-repeat; padding-right: 38px; min-height: 31px; }
+
+
+/***** Page Curl CSS3 - IE9+ http://nicolasgallagher.com/css-drop-shadows-without-warwickclean/tmce_temps/digi_tools/images/ *****/
+
+/* Shared styles */
+.drop-shadow {
+	position:relative;
+	display: block;
+	padding:1em;
+	margin-bottom:1em;
+	background:#fff;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+}
+.drop-shadow:before,
+.drop-shadow:after {
+	content:"";
+	position:absolute;
+	z-index:-2; d
+}
+
+/* Lifted corners */
+
+.lifted:before,
+.lifted:after {
+	bottom:15px;
+	left:10px;
+	width:50%;
+	height:20%;
+	max-width:300px;
+	-webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform:rotate(-3deg);
+	-moz-transform:rotate(-3deg);
+	-ms-transform:rotate(-3deg);
+	-o-transform:rotate(-3deg);
+	transform:rotate(-3deg);
+}
+.lifted:after {
+	right:10px;
+	left:auto;
+	-webkit-transform:rotate(3deg);
+	-moz-transform:rotate(3deg);
+	-ms-transform:rotate(3deg);
+	-o-transform:rotate(3deg);
+	transform:rotate(3deg);
+}
+
+        /* Curved shadows */
+
+.curved:before {
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:50%;
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-border-radius:10px / 100px;
+    border-radius:10px / 100px;
+}
+
+
+/*****************************************rich**********************************************/
+
+
+#module-header h2 {
+	padding: 5px 5px 5px 10px;
+	position: relative;
+	left: -25px;
+	top: -30px;
+	color: white;
+	min-width: 734px;
+	width: calc(100% + 35px);
+	/* Firefox */ width: -moz-calc(100% + 35px);
+	/* WebKit */  width: -webkit-calc(100% + 35px);
+	/* Opera */   width: -o-calc(100% + 35px);
+	font-size: 200%;
+	margin: 17px 0 0;
+	background-color: #aaa; 
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+    text-shadow: rgba(0, 0, 0, 0.85) 0 0 5px;
+}
+#module-header h2 i {
+	font-size: 200%;
+	background-color: #9cb861;
+	vertical-align:middle;
+	padding: 40px 10px 10px 10px;
+	top: -15px;
+	position: relative;
+	text-shadow: none;
+}
+
+#digital-tools-banner {
+	background-color: #9cb861; 
+	padding: 50px 20px 50px 115px; 
+	font-size: 300%; 
+	margin: 17px 0px 0px; 
+	font-family: 'roboto slab', serif; color: #ffffff; 
+	text-align: left; 
+	background-position: 20px 50%; 
+	background-repeat: no-repeat;
+	background-image: url( "/theme/warwickclean/tmce_temps/digi_tools/images/digital_tools_80.png")
+	/*background-image: url([[pix:theme|../tmce_temps/digi_tools/images/digital_tools_80]]);*/
+}
+
+
+h2#research-data {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/research_data_banner.jpg")50% 80%;
+}
+
+
+h2#open-access {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/open_access_banner.jpg")50% 50%;
+}
+
+h2#web-publishing {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/web_publishing_banner.jpg")50% 21%;
+}
+
+
+h2#multimedia {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/multimedia.jpg")50% 46%;
+}
+
+h2#online-identity {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/online_identity_banner.jpg")50% 36%;
+}
+
+h2#networking {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/networking_banner.jpg") 50% 36%;
+}
+
+h2#data-literacy {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/data_literacy_banner.png")50% 46%;
+}
+
+h2#collaboration {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/collaboration_banner.jpg") 40% 42%;
+}
+
+h2#current-awareness {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/current_awareness_banner.jpg") 50% 50%;
+	 }
+
+h2#getting-organised {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/getting_organised_banner.jpg")50% 60%;
+}
+
+h2.inverted {
+	color: #000 !important;
+	text-shadow: rgba(255, 255, 255,1) 0 0 5px;
+}
+
+#module-header table{
+	width: 100%;
+}
+#module-header table td {
+	width: 50%;
+	vertical-align: top;
+}
+#module-header p.description {
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+	font-style: italic;
+}
+
+/* 
+CSS for Digital Tools for Researcher Template Boxes
+Developed by Steve Ranford, 2013.
+
+Also including Page Curl CSS3.
+
+*/
+
+
+/**** Example ****/
+
+.e_example div.tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/exampltile.png") }
+
+/theme/warwickclean/tmce_temps/template_images/whead1f_topright_bg.png
+
+.e_example div.boxtab { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/blue-top-bookmark.png")}
+.e_example div.boxarea {border-color: #b8d0e6}
+.e_example h3, .e_example h4 {color: #316c76 !important}
+
+
+/**** Clipboard ****/
+
+.e_clipboard div.tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/clipboard_tile.png") }
+.e_clipboard div.boxtab { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/brown-top-bookmark.png")}
+.e_clipboard div.boxarea {border-color: #e2dcde}
+.e_clipboard  h3, .e_clipboard  h4 {color: #564148 !important}
+
+/**** Exercise ****/
+
+.e_exercise div.tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/exercistile.png") }
+.e_exercise div.boxtab { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/orange-top-bookmark.png")}
+.e_exercise div.boxarea {border-color: #f1cb9f}
+.e_exercise h3, .e_exercise  h4 {color: #bf5647 !important}
+
+/**** Download ****/
+
+.e_download div.tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/download_tile.png") }
+.e_download div.boxtab { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/black-top-bookmark.png")}
+.e_download div.boxarea {border-color: #D7D8DB}
+.e_download h3, .e_download h4 {color: #5C5460 !important}
+
+/**** Exercise ****/
+
+.e_folder div.tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/folder_tile.png") }
+.e_folder div.boxtab { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/pink-top-bookmark.png")}
+.e_folder div.boxarea {border-color: #E5BCC0}
+.e_folder h3, .e_folder h4 {color: #7E5157 !important}
+
+/**** Quotes ****/
+
+.e_quotes div.tile { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/quotes_tile.png") }
+.e_quotes div.boxtab { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/aqua-top-bookmark.png")}
+.e_quotes div.boxarea {border-color: #A3D3D8}
+.e_quotes h3, .e_quotes h4 {color: #326272 !important}
+
+/**** Links ****/
+
+.e_links div.tile { background-image: none }
+.e_links div.boxtab { background-image: url("/theme/warwickclean/tmce_temps/digi_tools/images/grey-top-bookmark.png")}
+.e_links div.boxarea {border-color: #fff}
+.e_links h3, .e_links h4 {color: #777 !important}
+
+/**** Resources RHS ****/
+
+#rhsContent .content {padding-right: 0px !important}
+
+.r-resource {background: #fff; margin-right: 18px; margin-bottom: 10px; padding-top: 10px !important;}
+.r-resource .r-link, .r-resource p, .r-resource .r-ratings {    display: block;    margin: 5px; padding-bottom: 5px }
+.r-resource p.r-student-review, .r-resource p.r-student-comment{    font-style: italic;    padding-left:5px;}
+.r-resource .r-ratings {    padding-left:5px;}
+.r-resource .r-link {position: relative; width: 90%; background: url('http://www2.warwick.ac.uk/static/services/skills/awp/academicwriting/mini-link.png') top right no-repeat; padding-right: 38px; min-height: 31px; }
+
+
+/***** Page Curl CSS3 - IE9+ http://nicolasgallagher.com/css-drop-shadows-without-warwickclean/tmce_temps/digi_tools/images/ *****/
+
+/* Shared styles */
+.drop-shadow {
+	position:relative;
+	display: block;
+	padding:1em;
+	margin-bottom:1em;
+	background:#fff;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+}
+.drop-shadow:before,
+.drop-shadow:after {
+	content:"";
+	position:absolute;
+	z-index:-2;
+}
+
+/* Lifted corners */
+
+.lifted:before,
+.lifted:after {
+	bottom:15px;
+	left:10px;
+	width:50%;
+	height:20%;
+	max-width:300px;
+	-webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform:rotate(-3deg);
+	-moz-transform:rotate(-3deg);
+	-ms-transform:rotate(-3deg);
+	-o-transform:rotate(-3deg);
+	transform:rotate(-3deg);
+}
+.lifted:after {
+	right:10px;
+	left:auto;
+	-webkit-transform:rotate(3deg);
+	-moz-transform:rotate(3deg);
+	-ms-transform:rotate(3deg);
+	-o-transform:rotate(3deg);
+	transform:rotate(3deg);
+}
+
+        /* Curved shadows */
+
+.curved:before {
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:50%;
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-border-radius:10px / 100px;
+    border-radius:10px / 100px;
+}
+
+
+/* Polaroid 1
+-------------------------*/
+
+#polaroid-outer{
+	background:#096;
+	min-height:90px;
+}
+
+#head-title-polaroid{
+	margin-left:60px;
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+	font-weight:700;
+	font-size:1.5em;
+	letter-spacing:-1px;
+	color:#fff;
+}
+
+.polaroid-images a{
+	background: white;
+	/*display: inline;*/
+	float: left;
+	margin: -10px 0px 7px 10px;
+	padding: 10px 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+	box-shadow: 0 4px 6px rgba(0,0,0,.3);
+	-webkit-transition: all .15s linear;
+	-moz-transition: all .15s linear;
+	transition: all .15s linear;
+	z-index:0;
+   /* position:relative;*/
+/*   	position:absolute;*/
+	max-width:100px;
+	-webkit-transform: rotate(-4deg);
+	-moz-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+	/*border:1px solid #CCC;*/
+}
+
+
+.polaroid-images a:after {
+	color: #333;
+	font-size: 20px;
+	content: attr(title);
+	position: relative;
+	top:15px;
+}
+
+.polaroid-images img { 
+	display: block; 
+	width: inherit; 
+}
+
+
+.polaroid-images a:hover{
+	-webkit-transform: rotate(0deg); 
+	-moz-transform: rotate(0deg);
+     transform: rotate(0deg);
+	-webkit-transform: scale(1.2); 
+	-moz-transform: scale(1.2);
+     transform: scale(1.2);
+	z-index:10;
+		-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+	box-shadow: 0 4px 6px rgba(0,0,0,.3);
+}
+
+/* Small Headwer with Polaroid Image using  Effect 7 
+-------------------------*/
+
+#hbg-text-head{
+	font-size:.9em;
+	background: #f7f7f8;
+	background-image: linear-gradient(bottom, #fff 0%, #f7f7f8 100%);
+	background-image: -o-linear-gradient(bottom, #fff 0%, #f7f7f8 100%);
+	background-image: -moz-linear-gradient(bottom, #fff 0%, #f7f7f8 100%);
+	background-image: -webkit-linear-gradient(bottom, #fff 0%, #f7f7f8 100%);
+	background-image: -ms-linear-gradient(bottom, #fff 0%, #f7f7f8 100%);
+	padding:2px 7px;
+	/*margin-bottom:15px;*/
+}
+
+#hbg-text-head h1,#hbg-text-head h2, #hbg-text-head h3{
+	font-size:1.9em;
+	font-weight:700;
+	letter-spacing:-1px;
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+	color:#373a41;
+	margin-left:7px;
+	margin-bottom:0px;
+}
+
+
+
+#head_cont1 h2,#head_cont1 h3, #head_cont1 h4{
+	letter-spacing:-1px;
+	color:#373a41;
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+	margin-top:0px;
+	font-size:1.4em;
+	font-weight:600;
+	line-height: 1.2em;
+}
+
+#hbg-contact{
+	clear:both;
+	padding:14px 10px;
+	/*margin-bottom:10px;*/
+	line-height:1.5;
+	color:#545454;
+	margin-top:7px;
+	border:1px solid #dde1e3;
+	border-radius:4px;
+	background:#f7f7f8;
+	background-image: linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -o-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -moz-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -webkit-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -ms-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	max-width:730px;
+}
+
+span.pbox.effect6{
+	max-width:200px;
+}
+
+#head_cont1{
+	padding:10px 10px 0px 10px;
+	max-width:730px;
+}
+
+#head_cont1 h2, #head_cont1 h2, #head_cont1 h3, #head_cont1 h4{
+	margin-top:0px;
+	line-height:1.2;
+}
+
+#head_cont1 .pbox{
+	max-width:200px;
+}
+	
+	
+.pbox {
+	background:#FFF;
+	margin:0px;
+	display:inline-block;
+	padding:10px;
+	float:left;
+	margin-bottom:15px;
+	margin-right:15px;
+}
+
+
+@media (max-width: 461px){
+	.pbox {
+		float:none;
+	}
+}
+
+/* large image heaeder
+-------------------------*/
+
+#hbg-contact2{
+	clear:both;
+	background:#f7f7f8;
+	border:1px solid #dde1e3;
+	border-radius:4px;
+	background:#f7f7f8;
+	background-image: linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -o-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -moz-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -webkit-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -ms-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	padding:14px 10px;
+	margin:0;
+	line-height:1.5;
+	color:#545454;
+	margin-top:7px;
+}
+
+
+/* http://www.paulund.co.uk/creating-different-css3-box-shadows-effects
+-------------------------*/
+
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+.effect2
+{
+  position: relative;
+}
+.effect2:before, .effect2:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.effect2:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+
+/*==================================================
+ * Effect 6
+ * ===============================================*/
+.effect6
+{
+  	position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect6:before, .effect6:after
+{
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.4);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.4);
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+
+/*==================================================
+ * Effect 7
+ * ===============================================*/
+.effect7
+{
+  	position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect7:before, .effect7:after
+{
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+} 
+.effect7:after
+{
+	right:10px; 
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg); 
+       -moz-transform:skew(8deg) rotate(3deg);     
+        -ms-transform:skew(8deg) rotate(3deg);     
+         -o-transform:skew(8deg) rotate(3deg); 
+            transform:skew(8deg) rotate(3deg);
+}
+
+/*==================================================
+ * Effect 8
+ * ===============================================*/
+.effect8
+{
+  	position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect8:before, .effect8:after
+{
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+} 
+.effect8:after
+{
+	right:10px; 
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg); 
+       -moz-transform:skew(8deg) rotate(3deg);     
+        -ms-transform:skew(8deg) rotate(3deg);     
+         -o-transform:skew(8deg) rotate(3deg); 
+            transform:skew(8deg) rotate(3deg);
+}
+
+
+/**************************** OLD TEMPLATE - header1 flexible*********************/
+#header1_container{
+	border: 7px solid #e3ebf6;
+	margin-bottom:10px;
+	padding:4px 5px 0px 5px;
+}
+ 
+#whead1f{
+	margin:0px;
+	padding:0px;
+}
+
+#whead1f p{
+	margin-top:0px;
+	margin-bottom:10px;
+}
+
+
+.whead1f_h1{
+	color:#284280;
+	margin-top:0px !important; 
+	font-size:1.5em;
+	line-height:1.2;
+}
+
+
+#whead1f{
+	background:url("/theme/warwickclean/tmce_temps/globaltemps/tmpimages/old_tmps/whead1f_topright_bg.png") repeat-x;
+}
+
+
+#whead1f_top{
+	background: url("/theme/warwickclean/tmce_temps/globaltemps/tmpimages/old_tmps/whead1f_top_bg.png") no-repeat;
+	width:100%;
+}
+
+#whead1f_im{
+	display:inline;
+	float:left;
+	height:168px;
+}
+
+#whead1f_im img{
+	height:107px;
+	width:107px;
+	margin-left:22px;
+	margin-top:17px;
+}
+
+#whead1f_top_text_long{
+	min-height: 150px;
+	margin-left:160px;
+	padding-top:18px;
+	padding-right:10px;
+}
+
+#whead1f_mid{
+	width:100%;
+}
+
+#whead1f_mid li{
+	list-style-type:disc;
+	line-height:1.3;
+	margin-bottom:4px;
+	list-style-position:outside;
+}
+
+#whead1f_mid p{
+	margin:0px 10px 10px 10px;
+}
+
+#whead1f_tutor p{
+	line-height:1.4 !important;
+}
+
+
+#whead1f_mid_list{
+	margin-left:50px;
+	margin-right:10px;
+	padding-top:10px;
+	padding-bottom:14px;
+}
+
+ul#whead1f_mid_list{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#whead1f_bot{
+	background: white url("/theme/warwickclean/tmce_temps/globaltemps/tmpimages/old_tmps/whead1f_bot_bg.jpg") no-repeat;
+}
+
+.editing #section-0 .no-overflow{
+	margin-bottom:0px;
+}
+
+#whead1f_tutor{
+	padding:5px;
+	background:#ebf1f9;
+	margin:0px 4px;
+/*	position:relative;
+	top:5px;*/
+	margin-bottom:12px;
+}
+
+#whead1f_tutor p{
+	background:#ebf1f9;
+	margin-left:8px;
+	margin-right:8px;
+	line-height:1.8;
+	margin-bottom:0px;
+}
+
+/****** OLD TEMPLATE - awesome silver button******/
+
+.btn_silver {
+	display: inline-block;
+	padding: 4px 12px;
+	margin-bottom: 0;
+	line-height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	color: #333333;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	background-color: #f5f5f5;
+	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	border: 1px solid #bbbbbb;
+	border-bottom-color: #a2a2a2;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+}
+
+a.btn_silver:link{
+	text-decoration:none !important;
+}
+
+.btn_top_space{
+	margin:8px 0px;
+}
+
+
+.btn_silver.active, .btn_silver:active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+
+.btn_silver:focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+
+.btn_silver:hover, .btn_silver:focus {
+	color:#1F499C !important;
+	text-decoration: none;
+	background-position: 0 -15px;
+	-webkit-transition: background-position 0.1s linear;
+	-moz-transition: background-position 0.1s linear;
+	-o-transition: background-position 0.1s linear;
+	transition: background-position 0.1s linear;
+}
+
+.btn_silver:active, .btn_silver.active {
+	background-color: #cccccc \9;
+}
+
+.btn_silver:hover, .btn_silver:focus, .btn_silver:active, .btn_silver.active, .btn_silver.disabled, .btn_silver[disabled] {
+	color:#1F499C !important;
+	background-color: #e6e6e6;
+}
+
+
+/* Global Content Box with Styles
+-------------------------*/
+
+.hideme{
+	display:none;
+}
+
+.boxback{
+	margin-bottom:10px;
+}
+
+div.boxstyle > div > div {
+    position: relative;
+}
+
+.boxstyle div.boxarea {
+    padding: 1em;
+    border: solid 1px;
+}
+
+.boxstyle h3, .boxstyle h4, .boxstyle h5  {
+    margin-left: 0 !important;
+} 
+.boxstyle h3 {
+    font-size: 1.5em;
+    margin-top: 0em; /* adapted for moodle to align to the bottom of icons */
+    margin-bottom: 0.9em; /* adapted for moodle up from 0.5em on sitebuilder */
+    margin-left: 2.3em !important;
+} 
+
+.boxstyle .boxtab{
+	background: top left no-repeat; 
+	position: absolute;
+	top: -14px; 
+	left: 7px;
+	width: 47px;
+	height: 66px;
+}
+
+/* extra bits for font-awesome based bookmarks */
+.boxstyle .boxtab .fa {
+	margin: auto;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	padding-top: 25px;
+	padding-left: 8px;
+}
+
+.boxstyle .boxarea {
+	z-index: 1 !important
+}
+
+div.boxstyle{
+	padding-top:10px;
+	margin:7px 0px;
+}
+
+/*.editing div.boxstyle{
+	padding-top:38px;
+}
+*/
+
+
+.editing .sectionname{
+	clear:both;
+}
+
+.drop_shadow_lighter {
+	position:relative;
+	display: block;
+	padding:1em;
+	margin-bottom:1em;
+	background:#fff;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+}
+.drop_shadow_lighter:before,
+.drop_shadow_lighter:after {
+	content:"";
+	position:absolute;
+	z-index:-2;
+}
+
+.padbot10{
+	padding-bottom:10px;
+}
+.nopadbot{
+	padding-bottom:0px !important;
+}
+
+/* Large Image Header
+-------------------------*/
+
+.drop_shadow_head {
+	position:relative;
+	display: block;
+	padding:10px;
+	margin-bottom:1em;
+	background:#fff;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	/*max-width:728px;*/
+
+
+}
+.drop_shadow_head:before,
+.drop_shadow_head:after {
+	content:"";
+	position:absolute;
+	z-index:-2;
+}
+
+div.drop_shadow_head{
+	max-width:710px;
+}
+
+/*.lrgpholder{
+	max-width:710px;
+}
+*/
+
+/* Content Box: Blue with Icon
+-------------------------*/
+.bluebox div.boxback{ 
+	background:#f3f9fc;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f3f9fc),color-stop(1, #dfeffa));
+	background-image: -o-linear-gradient(bottom, #f3f9fc 0%, #dfeffa 100%);
+	background-image: -moz-linear-gradient(bottom, #f3f9fc 0%, #dfeffa 100%);
+	background-image: -webkit-linear-gradient(bottom, #f3f9fc 0%, #dfeffa 100%);
+	background-image: -ms-linear-gradient(bottom, #f3f9fc 0%, #dfeffa 100%);
+	background-image: linear-gradient(to bottom, #f3f9fc 0%, #dfeffa 100%);
+}
+
+
+.bluebox div.boxtab { 
+	background-image: url("/theme/warwickclean/tmce_temps/globaltemps/tmpimages/ribbonblue.png")
+}
+	
+.bluebox div.boxarea {
+	border: 1px #e4f3fb dotted;
+}
+	
+.bluebox h3, .bluebox h4 {
+	color: #2287c9 !important;
+	line-height:1.2 !important;
+}
+
+/* Content Box: Blue contrast
+-------------------------*/
+.boxback_bc{
+	background-color:#ffffff;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #f6fbfd));
+	background-image: -o-linear-gradient(bottom, #ffffff 0%, #f6fbfd 100%);
+	background-image: -moz-linear-gradient(bottom, #ffffff 0%, #f6fbfd 100%);
+	background-image: -webkit-linear-gradient(bottom, #ffffff 0%, #f6fbfd 100%);
+	background-image: -ms-linear-gradient(bottom, #ffffff 0%, #f6fbfd 100%);
+	background-image: linear-gradient(to bottom, #ffffff 0%, #f6fbfd 100%);)
+	border: none !important;
+	margin: 5px 15px;
+	line-height:1;
+}
+
+.boxback_bc p{
+	line-height:1;
+}
+
+/* Content Box: Green with Icon
+-------------------------*/
+.greenbox div.boxback{ 
+	background:#f4fbfa;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f4fbfa),color-stop(1, #e6f8f5));
+	background-image: -o-linear-gradient(bottom, #f4fbfa 0%, #e6f8f5 100%);
+	background-image: -moz-linear-gradient(bottom, #f4fbfa 0%, #e6f8f5 100%);
+	background-image: -webkit-linear-gradient(bottom, #f4fbfa 0%, #e6f8f5 100%);
+	background-image: -ms-linear-gradient(bottom, #f4fbfa 0%, #e6f8f5 100%);
+	background-image: linear-gradient(to bottom, #f4fbfa 0%, #e6f8f5 100%);
+}
+
+
+.greenbox div.boxtab { 
+	background-image: url("/theme/warwickclean/tmce_temps/globaltemps/tmpimages/ribbongreen.png")
+}
+	
+.greenbox div.boxarea {
+	border: 1px #e6f8f5 dotted;
+}
+	
+.greenbox h3, .greenbox h4 {
+	color: #38b5a7 !important;
+	line-height:1.2 !important;
+}
+
+
+/* Content Box: Grey with Icon
+-------------------------*/
+.greybox div.boxback{ 
+	background:#fafafa;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fafafa),color-stop(1, #f3f3f3));
+	background-image: -o-linear-gradient(bottom, #fafafa 0%, #f3f3f3 100%);
+	background-image: -moz-linear-gradient(bottom, #fafafa 0%, #f3f3f3 100%);
+	background-image: -webkit-linear-gradient(bottom, #fafafa 0%, #f3f3f3 100%);
+	background-image: -ms-linear-gradient(bottom, #fafafa 0%, #f3f3f3 100%);
+	background-image: linear-gradient(to bottom, #fafafa 0%, #f3f3f3 100%);
+}
+
+
+.greybox div.boxtab { 
+	background-image: url("/theme/warwickclean/tmce_temps/globaltemps/tmpimages/ribbongrey.png")
+}
+	
+.greybox div.boxarea {
+	border: 1px #f1f1f1 dotted;
+}
+	
+.greybox h3, .greybox h4 {
+	color: #454545 !important;
+	line-height:1.2 !important;
+}
+
+
+/* Content Box: Red with Icon
+-------------------------*/
+.redbox div.boxback{ 
+	background:#f8f3f4;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f8f3f4),color-stop(1, #f5e3e5));
+	background-image: -o-linear-gradient(bottom, #f8f3f4 0%, #f5e3e5 100%);
+	background-image: -moz-linear-gradient(bottom, #f8f3f4 0%, #f5e3e5 100%);
+	background-image: -webkit-linear-gradient(bottom, #f8f3f4 0%, #f5e3e5 100%);
+	background-image: -ms-linear-gradient(bottom, #f8f3f4 0%, #f5e3e5 100%);
+	background-image: linear-gradient(to bottom, #f8f3f4 0%, #f5e3e5 100%);
+}
+
+
+.redbox div.boxtab { 
+	background-image: url("/theme/warwickclean/tmce_temps/globaltemps/tmpimages/ribbonred.png")
+}
+	
+.redbox div.boxarea {
+	border: 1px #f6e7ea dotted;
+}
+	
+.redbox h3, .redbox h4 {
+	color: #b34a5a !important;
+	line-height:1.2 !important;
+}
+
+/* Content Box: Orange with Icon
+-------------------------*/
+.orangebox div.boxback{ 
+	background:#fbf5f2;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fbf5f2),color-stop(1, #faeadf));
+	background-image: -o-linear-gradient(bottom, #fbf5f2 0%, #faeadf 100%);
+	background-image: -moz-linear-gradient(bottom, #fbf5f2 0%, #faeadf 100%);
+	background-image: -webkit-linear-gradient(bottom, #fbf5f2 0%, #faeadf 100%);
+	background-image: -ms-linear-gradient(bottom, #fbf5f2 0%, #faeadf 100%);
+	background-image: linear-gradient(to bottom, #fbf5f2 0%, #faeadf 100%);
+}
+
+
+.orangebox div.boxtab { 
+	background-image: url("/theme/warwickclean/tmce_temps/globaltemps/tmpimages/ribbonorange.png")
+}
+	
+.orangebox div.boxarea {
+	border: 1px #f5f5f5 dotted;
+}
+	
+.orangebox h3, .orangebox h4 {
+	color: #d27135 !important;
+	line-height:1.2 !important;
+}
+
+
+/* Global Content Box NO icon Styles
+-------------------------*/
+.boxstyle_ni div.boxarea {
+    padding: 1em;
+}
+
+
+.boxstyle_ni h3 {
+    font-size: 1.5em;
+} 
+
+/*.editing div.boxstyle_ni{
+	padding-top:38px;
+}
+
+*/
+
+
+/* Lifted Corners for 2.6
+-------------------------*/
+/*.editing  div.drop_shadow_lighter.lifted_bot{
+	margin-top:50px;
+}
+*/
+
+/*div.drop_shadow_lighter.lifted_bot{
+	padding-top:6px;
+}*/
+
+.lifted_bot:before,
+.lifted_bot:after {
+	bottom:15px;
+	left:10px;
+	width:50%;
+	height:20%;
+	max-width:300px;
+	-webkit-box-shadow:0 15px 10px rgba(140, 140, 140, 0.8);
+	-moz-box-shadow:0 15px 10px rgba(140, 140, 140, 0.8);
+	box-shadow:0 15px 10px rgba(140, 140, 140, 0.8);
+	-webkit-transform:rotate(-3deg);
+	-moz-transform:rotate(-3deg);
+	-ms-transform:rotate(-3deg);
+	-o-transform:rotate(-3deg);
+	transform:rotate(-3deg);
+}
+.lifted_bot:after {
+	right:10px;
+	left:auto;
+	-webkit-transform:rotate(3deg);
+	-moz-transform:rotate(3deg);
+	-ms-transform:rotate(3deg);
+	-o-transform:rotate(3deg);
+	transform:rotate(3deg);
+}
+
+/* Style Formats
+-------------------------*/
+.format_greybox {
+	min-height: 20px;
+	padding: 15px;
+	margin-bottom: 10px;
+	background-color: #f7f7f8;
+	border: 1px solid #dde1e3;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+/*	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);*/
+	display:block;
+}
+
+/* Block Styled List
+-------------------------*/
+.block_html.block .list-group-item {
+	position: relative;
+	display: block;
+	padding: 8px 8px;
+	margin-bottom: -1px;
+	/*border: 1px solid #dddddd;*/
+	/*border-bottom:1px solid #dddddd;*/
+	border-left:1px solid #dddddd;
+	border-right:1px solid #dddddd;
+	background:#f7f7f8;
+	background: #f0f0f1;
+	background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5));
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+	background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+	background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+}
+
+.block_html.block .list-group-item.nomargbot{
+	margin-bottom:0px;
+}
+
+.block_html.block .list-group-item .fa{
+	color:#555;
+}
+
+
+/*.block_html.block .nav-tabs{
+	border-bottom:none;
+}*/
+
+.block_html.block .tab-content {
+	overflow:visible;
+}
+
+.block_html.block .nav {
+	margin-bottom: 0px;
+}
+
+.block_html.block  .fa-ul{
+	margin: 0 0 0 0;
+}
+
+.block_html.block  .fa-ul.blist{
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	margin-top:3px;
+}
+
+.block_html.block  .fa-li {
+	position:static;
+}
+
+.block_html.block  .list-group-item i{
+	float: left;
+	display: inline;
+	line-height:1.4;
+}
+
+.block_html.block  .list-group-item a{
+	display: block;
+	margin-left: 25px
+}
+
+.block_html.block .nav-tabs>li>a {
+	background:#f7f7f8;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 20px;
+	border: 1px solid #dddddd;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+/*	border-bottom:1px solid #000;*/
+}
+
+.block_html.block .nav-tabs>.active>a,.block_html.block  .nav-tabs>.active>a:hover,.block_html.block  .nav-tabs>.active>a:focus{
+	background:#fff;
+	border-bottom:1px solid #fff;
+}
