@@ -2567,5 +2567,6 @@ body.ie a img{/***removes borders on mage links in IE****/
 }*/
 
 body{
-	font-size:12px;
+	font-size:1em;
+	font-family: "Arial", Helvetica, Arial, Verdana, sans-serif;
 }
