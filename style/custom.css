@@ -2544,6 +2544,12 @@ span.mceIcon.mce_helixmedia{
 	background-repeat:no-repeat;
 }
 
+span.mceIcon.mce_helixmedia, #id_summary_editor_helixmedia{
+	display:none !important;
+}
+
+
+
 /* General
 -------------------------*/	
 span#mmsg{
@@ -2558,11 +2564,3 @@ body.ie a img{/***removes borders on mage links in IE****/
  height: auto;
  max-width: 100%;
 }
-
-/* Temporary
--------------------------*/	
-
-/*span.mceIcon.mce_helixmedia, #id_summary_editor_helixmedia{
-	display:none !important;
-}*/
-

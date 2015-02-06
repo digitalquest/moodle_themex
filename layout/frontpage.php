@@ -137,7 +137,7 @@ $(document).ready(function(){
 	<!--<div id="slideinner"><img id="slideexample" src="<?php echo $OUTPUT-> pix_url('slider_example', 'theme');?>" alt="slide eample" /></div>-->
 	
     <div id="slideinner">
-    	<img id="slideexample2" src="<?php echo $OUTPUT-> pix_url('media_trans', 'theme');?>" alt="slide eample" />
+    	<img id="slideexample2" class="img-responsive" src="<?php echo $OUTPUT-> pix_url('media_trans', 'theme');?>" alt="Multimedia icons exploding out from a laptop screen" />
     	<div id="front_txt_cont">
         	<div id="allwtext">
                 <h1 id="welcome_head"><span id="welc_l1" class="welc_l">Welcome to Moodle at</span> <span id="welc_l2" class="welc_l">the University of Warwick</span></h1>
