@@ -2548,6 +2548,10 @@ span.mceIcon.mce_helixmedia, #id_summary_editor_helixmedia{
 	display:none !important;
 }
 
+.dir-rtl .moodleSkin .mceToolbar select, .moodleSkin .mceToolbar a.mceButton.mce_helixmedia{
+	display:none !important;
+}
+
 
 
 /* General
