@@ -1,0 +1,303 @@
+#module-header h2 {
+	padding: 5px 5px 5px 10px;
+	position: relative;
+	left: -25px;
+	top: -30px;
+	color: white;
+	min-width: 734px;
+	width: calc(100% + 35px);
+	/* Firefox */ width: -moz-calc(100% + 35px);
+	/* WebKit */  width: -webkit-calc(100% + 35px);
+	/* Opera */   width: -o-calc(100% + 35px);
+	font-size: 200%;
+	margin: 17px 0 0;
+	background-color: #aaa; 
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+    text-shadow: rgba(0, 0, 0, 0.85) 0 0 5px;
+}
+#module-header h2 i {
+	font-size: 200%;
+	background-color: #9cb861;
+	vertical-align:middle;
+	padding: 40px 10px 10px 10px;
+	top: -15px;
+	position: relative;
+	text-shadow: none;
+}
+
+#digital-tools-banner {
+	background-color: #9cb861; 
+	padding: 50px 20px 50px 115px; 
+	font-size: 300%; 
+	margin: 17px 0px 0px; 
+	font-family: 'roboto slab', serif; color: #ffffff; 
+	text-align: left; 
+	background-position: 20px 50%; 
+	background-repeat: no-repeat;
+	background-image: url( "http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/digital_tools_80.png")
+	/*background-image: url([[pix:theme|../tmce_temps/digi_tools/images/digital_tools_80]]);*/
+}
+
+
+h2#research-data {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/research_data_banner.jpg")50% 80%;
+}
+
+
+h2#open-access {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/open_access_banner.jpg")50% 50%;
+}
+
+h2#web-publishing {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/web_publishing_banner.jpg")50% 21%;
+}
+
+
+h2#multimedia {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/multimedia.jpg")50% 46%;
+}
+
+h2#online-identity {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/online_identity_banner.jpg")50% 36%;
+}
+
+h2#networking {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/networking_banner.jpg") 50% 36%;
+}
+
+h2#data-literacy {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/data_literacy_banner.png")50% 46%;
+}
+
+h2#collaboration {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/collaboration_banner.jpg") 40% 42%;
+}
+
+h2#current-awareness {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/current_awareness_banner.jpg") 50% 50%;
+	 }
+
+h2#getting-organised {
+	background: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/getting_organised_banner.jpg")50% 60%;
+}
+
+i.fa {
+	min-width: 50px;
+	text-align: center;
+}
+
+h2.inverted {
+	color: #000 !important;
+	text-shadow: rgba(255, 255, 255,1) 0 0 5px;
+}
+
+#module-header table{
+	width: 100%;
+}
+#module-header table td {
+	width: 50%;
+	vertical-align: top;
+}
+#module-header p.description {
+	font-family: "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+	font-style: italic;
+}
+
+/* 
+CSS for Digital Tools for Researcher Template Boxes
+Developed by Steve Ranford, 2013.
+
+Also including Page Curl CSS3.
+
+*/
+
+div.boxstyle {
+    margin: 1.5em 0 1.5em 0 ;
+    padding: 0.1em;
+}
+div.boxstyle div {
+    border: medium none;
+}
+div.boxstyle > div > div {
+    position: relative;
+}
+.boxstyle div.tile {
+    background: repeat-y scroll  -1.7em top transparent;
+    position: relative;
+}
+
+.boxstyle div.e_tl {
+    background:  no-repeat scroll left top transparent;
+}
+.boxstyle div.boxarea {
+    padding: 1em;
+    border: solid 1px;
+}
+
+.boxstyle h3, .boxstyle h4, .boxstyle h5  {
+    margin-left: 0 !important;
+} 
+.boxstyle h3 {
+    font-size: 1.5em;
+    margin-top: 0.7em; /* adapted for moodle to align to the bottom of icons */
+    margin-bottom: 0.9em; /* adapted for moodle up from 0.5em on sitebuilder */
+    margin-left: 2.7em !important;
+} 
+.boxstyle p {
+    margin-left: 0 !important;
+} 
+
+.boxstyle .boxtab{
+	background: top left no-repeat; 
+	position: absolute;
+	top: -14px; 
+	left: 7px;
+	width: 47px;
+	height: 66px;
+	text-align: center;
+}
+
+/* extra bits for font-awesome based bookmarks */
+.boxstyle .boxtab .fa {
+	margin: auto;
+	font-size: 35px;
+	color: white;
+	text-align: center;
+	padding-top: 27px;
+	padding-left: 8px;
+}
+
+.boxstyle .boxarea {z-index: 1 !important}
+
+/**** Example ****/
+
+.e_example div.tile { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/exampltile.png") }
+
+/theme/warwickclean/tmce_temps/template_images/whead1f_topright_bg.png
+
+.e_example div.boxtab { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/blue-top-bookmark.png")}
+.e_example div.boxarea {border-color: #b8d0e6}
+.e_example h3, .e_example h4 {color: #316c76 !important}
+
+/**** Intro ****/
+
+.bbox div.tile { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/intro_tile.png") }
+.bbox div.boxtab { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/green-top-bookmark.png")}
+.bbox div.boxarea {border-color: #dfe9d6}
+.bbox h3, .bbox h4 {color: #2b7678 !important}
+
+/**** Clipboard ****/
+
+.e_clipboard div.tile { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/clipboard_tile.png") }
+.e_clipboard div.boxtab { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/brown-top-bookmark.png")}
+.e_clipboard div.boxarea {border-color: #e2dcde}
+.e_clipboard  h3, .e_clipboard  h4 {color: #564148 !important}
+
+/**** Exercise ****/
+
+.e_exercise div.tile { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/exercistile.png") }
+.e_exercise div.boxtab { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/orange-top-bookmark.png")}
+.e_exercise div.boxarea {border-color: #f1cb9f}
+.e_exercise h3, .e_exercise  h4 {color: #bf5647 !important}
+
+/**** Download ****/
+
+.e_download div.tile { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/download_tile.png") }
+.e_download div.boxtab { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/black-top-bookmark.png")}
+.e_download div.boxarea {border-color: #D7D8DB}
+.e_download h3, .e_download h4 {color: #5C5460 !important}
+
+/**** Exercise ****/
+
+.e_folder div.tile { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/folder_tile.png") }
+.e_folder div.boxtab { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/pink-top-bookmark.png")}
+.e_folder div.boxarea {border-color: #E5BCC0}
+.e_folder h3, .e_folder h4 {color: #7E5157 !important}
+
+/**** Quotes ****/
+
+.e_quotes div.tile { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/quotes_tile.png") }
+.e_quotes div.boxtab { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/aqua-top-bookmark.png")}
+.e_quotes div.boxarea {border-color: #A3D3D8}
+.e_quotes h3, .e_quotes h4 {color: #326272 !important}
+
+/**** Links ****/
+
+.e_links div.tile { background-image: none }
+.e_links div.boxtab { background-image: url("http://moodle-test.warwick.ac.uk/theme/warwickclean/tmce_temps/digi_tools/images/grey-top-bookmark.png")}
+.e_links div.boxarea {border-color: #fff}
+.e_links h3, .e_links h4 {color: #777 !important}
+
+/**** Resources RHS ****/
+
+#rhsContent .content {padding-right: 0px !important}
+
+.r-resource {background: #fff; margin-right: 18px; margin-bottom: 10px; padding-top: 10px !important;}
+.r-resource .r-link, .r-resource p, .r-resource .r-ratings {    display: block;    margin: 5px; padding-bottom: 5px }
+.r-resource p.r-student-review, .r-resource p.r-student-comment{    font-style: italic;    padding-left:5px;}
+.r-resource .r-ratings {    padding-left:5px;}
+.r-resource .r-link {position: relative; width: 90%; background: url('http://www2.warwick.ac.uk/static/services/skills/awp/academicwriting/mini-link.png') top right no-repeat; padding-right: 38px; min-height: 31px; }
+
+
+/***** Page Curl CSS3 - IE9+ http://nicolasgallagher.com/css-drop-shadows-without-warwickclean/tmce_temps/digi_tools/images/ *****/
+
+/* Shared styles */
+.drop-shadow {
+	position:relative;
+	display: block;
+	padding:1em;
+	margin-bottom:1em;
+	background:#fff;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+}
+.drop-shadow:before,
+.drop-shadow:after {
+	content:"";
+	position:absolute;
+	z-index:-2; d
+}
+
+/* Lifted corners */
+
+.lifted:before,
+.lifted:after {
+	bottom:15px;
+	left:10px;
+	width:50%;
+	height:20%;
+	max-width:300px;
+	-webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform:rotate(-3deg);
+	-moz-transform:rotate(-3deg);
+	-ms-transform:rotate(-3deg);
+	-o-transform:rotate(-3deg);
+	transform:rotate(-3deg);
+}
+.lifted:after {
+	right:10px;
+	left:auto;
+	-webkit-transform:rotate(3deg);
+	-moz-transform:rotate(3deg);
+	-ms-transform:rotate(3deg);
+	-o-transform:rotate(3deg);
+	transform:rotate(3deg);
+}
+
+        /* Curved shadows */
+
+.curved:before {
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:50%;
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
+    box-shadow:0 0 15px rgba(0,0,0,0.6);
+    -moz-border-radius:10px / 100px;
+    border-radius:10px / 100px;
+}
