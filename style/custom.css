@@ -2609,11 +2609,12 @@ a{
 /* Globals
 -------------------------*/
 
-.mdl_alert, .mdl_alert h4 {
+.mdl_alert_warn, .mdl_alert h4 {
 	color: #c09853;
 }
 
-.mdl_alert {
+.mdl_alert_warn {
+	color: #c09853;
 	padding: 8px 35px 8px 14px;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 	background-color: #fcf8e3;
