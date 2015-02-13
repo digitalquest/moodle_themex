@@ -1354,6 +1354,10 @@ nav.breadcrumb-button{
 	color:#545454;
 }
 
+#page-footer .footnote {
+	display:none;
+}
+
 #page-footer .fa{
 	display:inline;
 }
@@ -2628,9 +2632,6 @@ a{
 	font-size:1.4em;
  }
  
- .mdl_alert_red {
-	color:#a94442;
-}
 
 .mdl_alert_red {
 	padding: 8px 35px 8px 14px;
@@ -2639,4 +2640,20 @@ a{
 	background-color: #f2dede;
 	border-color: #ebccd1;
 }
+
+
+.mdl_alert_green {
+	padding: 8px 35px 8px 14px;
+	/*text-shadow: 0 1px 0 rgba(255,255,255,0.5);*/
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.mdl_alert_green:before {
+    content: "\f14a";
+    font-family: FontAwesome;
+	margin-right:4px;
+	font-size:1.4em;
+ }
 
