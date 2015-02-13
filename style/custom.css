@@ -2609,21 +2609,34 @@ a{
 /* Globals
 -------------------------*/
 
-.mdl_alert_amber, .mdl_alert_amber h4 {
+.mdl_alert_amber {
 	color: #c09853;
 }
 
 .mdl_alert_amber {
 	color: #c09853;
 	padding: 8px 35px 8px 14px;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+/*	text-shadow: 0 1px 0 rgba(255,255,255,0.5);*/
 	background-color: #fcf8e3;
 	border: 1px solid #fbeed5;
 }
 
-.mdl_alert_amber:before {
+.mdl_alert_amber:before, .mdl_alert_red:before {
     content: "\f071";
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
  }
+ 
+ .mdl_alert_red {
+	color:#a94442;
+}
+
+.mdl_alert_red {
+	padding: 8px 35px 8px 14px;
+	/*text-shadow: 0 1px 0 rgba(255,255,255,0.5);*/
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
