@@ -2624,5 +2624,6 @@ a{
 .mdl_alert_amber:before {
     content: "\f071";
     font-family: FontAwesome;
-	margin-right:8px;
+	margin-right:4px;
+	font-size:1.4em;
  }
