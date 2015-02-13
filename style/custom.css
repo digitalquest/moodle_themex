@@ -2622,7 +2622,7 @@ a{
 }
 
 .mdl_alert_amber:before {
-    content: "\f000";
+    content: "\f071";
     font-family: FontAwesome;
 	margin-right:8px;
  }
