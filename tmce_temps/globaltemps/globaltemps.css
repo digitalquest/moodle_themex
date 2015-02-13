@@ -1076,6 +1076,10 @@ a.btn_silver:link{
 	margin-bottom:10px;
 }
 
+#page-mod-page-view .boxback{
+	margin-bottom:20px;
+}
+
 div.boxstyle > div > div {
     position: relative;
 }
@@ -1510,4 +1514,30 @@ div.drop_shadow_head{
 .block_html.block .nav-tabs>.active>a,.block_html.block  .nav-tabs>.active>a:hover,.block_html.block  .nav-tabs>.active>a:focus{
 	background:#fff;
 	border-bottom:1px solid #fff;
+}
+
+/* Two colums image left
+-------------------------*/
+
+.tmp_textright{
+}
+
+.tmp_imleft{
+	float: left;
+	margin: 0px 15px 10px 0px;
+}
+
+.greybox_imleft{
+}
+
+.greybox_imleft_wrapper{
+	background:#fafafa;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fafafa),color-stop(1, #fff));
+	background-image: -o-linear-gradient(bottom, #fafafa 0%, #fff 100%);
+	background-image: -moz-linear-gradient(bottom, #fafafa 0%, #fff 100%);
+	background-image: -webkit-linear-gradient(bottom, #fafafa 0%, #fff 100%);
+	background-image: -ms-linear-gradient(bottom, #fafafa 0%, #fff 100%);
+	background-image: linear-gradient(to bottom, #fafafa 0%, #fff 100%);
+	padding:10px 15px;
+	display:table;
 }

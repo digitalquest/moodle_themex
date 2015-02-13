@@ -2568,3 +2568,40 @@ body.ie a img{/***removes borders on mage links in IE****/
  height: auto;
  max-width: 100%;
 }
+
+/* Links over multiple lines
+-------------------------*/
+
+a{
+	word-wrap: break-word;
+}
+	
+	
+/* Warning: Needed for oldIE support, but words are broken up letter-by-letter - https://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/ */ 
+
+a{
+ -ms-word-break: break-all;
+     word-break: break-all;
+
+     /* Non standard for webkit */
+    /* word-break: break-word;*/
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+	
+}
+
+/* Modfield Link
+-------------------------*/	
+
+.modified{
+	background: #fafafa;
+	padding: 10px;
+	margin: 20px 0px 10px 0px;
+	text-transform: uppercase;
+	font-size: .8em;
+	color: #545454;
+	font-family: 'Open Sans',sans-serif;
+}
