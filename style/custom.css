@@ -172,7 +172,8 @@ a.signout_link2, a.signin_link2{
 	color:#fff;
 	position:absolute;
 	right:12px;
-	top:12px;
+/*	top:12px;*/
+	margin-top:12px
 }
 
 #wbar-log-outer a:hover{
