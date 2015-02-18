@@ -150,7 +150,7 @@ function theme_warwickclean_get_html_for_settings(renderer_base $output, moodle_
 
     $return->warningmessage = '';
     if (!empty($page->theme->settings->warningmessage)) {
-        $return->warningmessage = '<div class="warning-message text-center '.$return->warningcolor.'">'.$page->theme->settings->warningmessage.'</div>';
+        $return->warningmessage = '<div class="warning-message text-center mdl_alert_'.$return->warningcolor.'">'.$page->theme->settings->warningmessage.'</div>';
     }
 
     return $return;

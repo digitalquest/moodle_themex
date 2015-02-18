@@ -79,8 +79,8 @@ if ($ADMIN->fulltree) {
     $name = 'theme_warwickclean/warningcolor';
     $title = get_string('warning_color','theme_warwickclean');
     $description = get_string('warning_colordesc', 'theme_warwickclean');
-    $default = 'green';
-    $choices = array('red'=>'mdl_alert_red', 'amber'=>'mdl_alert_amber', 'green'=>'mdl_alert_green');
+    $default = 'amber';
+    $choices = array('red'=>'red', 'amber'=>'amber', 'green'=>'green');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
