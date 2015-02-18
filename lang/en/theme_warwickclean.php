@@ -54,6 +54,12 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
 
+$string['warning_message'] = 'Warning message';
+$string['warning_messagedesc'] = 'Whatever you add to this textarea will be displayed as a warning message throughout your Moodle site.';
+
+$string['warning_color'] = 'Warning message color';
+$string['warning_colordesc'] = 'Color of the warning message (green, amber or red).';
+
 $string['invert'] = 'Invert navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 

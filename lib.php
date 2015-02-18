@@ -143,6 +143,16 @@ function theme_warwickclean_get_html_for_settings(renderer_base $output, moodle_
         $return->footnote = '<div class="footnote text-center">'.$page->theme->settings->footnote.'</div>';
     }
 
+    $return->warningcolor = '';
+    if (!empty($page->theme->settings->warningcolor)) {
+        $return->warningcolor = $page->theme->settings->warningcolor;
+    }
+
+    $return->warningmessage = '';
+    if (!empty($page->theme->settings->warningmessage)) {
+        $return->warningmessage = '<div class="warning-message text-center '.$return->warningcolor.'">'.$page->theme->settings->warningmessage.'</div>';
+    }
+
     return $return;
 }
 

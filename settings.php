@@ -65,4 +65,23 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
+
+    // Warning message setting.
+    $name = 'theme_warwickclean/warningmessage';
+    $title = get_string('warning_message', 'theme_warwickclean');
+    $description = get_string('warning_messagedesc', 'theme_warwickclean');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+    
+    // Warning message color
+    $name = 'theme_warwickclean/warningcolor';
+    $title = get_string('warning_color','theme_warwickclean');
+    $description = get_string('warning_colordesc', 'theme_warwickclean');
+    $default = 'green';
+    $choices = array('red'=>'mdl_alert_red', 'amber'=>'mdl_alert_amber', 'green'=>'mdl_alert_green');
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
 }
