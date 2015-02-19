@@ -143,12 +143,12 @@ class theme_warwickclean_core_renderer extends core_renderer {
 			$branch->add('Interdisciplinary/Cross-Faculty',new moodle_url('/course/index.php?categoryid=28'));
 			$branch->add('Services',new moodle_url('/course/index.php?categoryid=56'));
 			$branch->add('Sandbox',new moodle_url('/course/index.php?categoryid=51'));
-*/			
+			
 			$categories = coursecat::make_categories_list();
 			foreach ($categories as $key=>$value) {
 				$branch->add($value,new moodle_url('/course/index.php?categoryid='.$key));
 			}
-		
+*/		
 	// Add a custom link to top navigation
             $branchlabel = "Help";
             $branchurl   = new moodle_url('/');
