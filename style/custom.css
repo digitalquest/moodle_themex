@@ -2656,7 +2656,7 @@ a{
 }
 
 .mdl_alert_green:before {
-    content: "\f087";
+    content: "\f058";
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
