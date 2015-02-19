@@ -2640,7 +2640,7 @@ a{
 }
 
 .mdl_alert_red:before {
-    content: "\f071";
+    content: "\f06a";
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
@@ -2656,7 +2656,7 @@ a{
 }
 
 .mdl_alert_green:before {
-    content: "\f14a";
+    content: "\f087";
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
