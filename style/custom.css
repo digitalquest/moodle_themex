@@ -2627,6 +2627,8 @@ a{
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
+	position: relative;
+	top: 2px;
  }
  
 
@@ -2642,6 +2644,8 @@ a{
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
+	position: relative;
+	top: 2px
  }
 
 .mdl_alert_green {
@@ -2656,6 +2660,8 @@ a{
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
+	position: relative;
+	top: 2px
  }
  
  .mdl_alert_blue {
@@ -2670,5 +2676,7 @@ a{
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
+	position: relative;
+	top: 2px
  }
 
