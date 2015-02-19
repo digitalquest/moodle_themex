@@ -22,7 +22,6 @@
 <div id="footright1">
 <span id="help-foot"> <p class="helplink"><?php echo $OUTPUT->page_doc_link(); ?></p></span>
 <span id="foot-log"><?php echo $html->footnote; echo $OUTPUT->login_info(); echo $OUTPUT->standard_footer_html();?></span>
-<?php echo $html->warningmessage;?>
 </div>
 
 </div>

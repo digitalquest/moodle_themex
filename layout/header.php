@@ -1,3 +1,4 @@
+<?php echo $html->warningmessage;?>
 <div id="top-wbar">
 	<div id="wbar-inner">
    <a id="wlogo"  href="http://www2.warwick.ac.uk/"><?php //echo $SITE->shortname; ?> <img id="warlogo" src="<?php echo $OUTPUT-> pix_url('logo_warwick', 'theme');?>" alt="University of Warwick Logo" /> </a>
