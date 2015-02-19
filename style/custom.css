@@ -2611,22 +2611,18 @@ a{
 	font-family: 'Open Sans',sans-serif;
 }
 
-/* Globals
+/* Warning Messages
 -------------------------*/
 
-.mdl_alert_amber {
-	color: #c09853;
-}
 
 .mdl_alert_amber {
 	color: #c09853;
 	padding: 8px 35px 8px 14px;
-/*	text-shadow: 0 1px 0 rgba(255,255,255,0.5);*/
 	background-color: #fcf8e3;
-	border: 1px solid #fbeed5;
+	border:1px solid #faebcc;
 }
 
-.mdl_alert_amber:before, .mdl_alert_red:before {
+.mdl_alert_amber:before{
     content: "\f071";
     font-family: FontAwesome;
 	margin-right:4px;
@@ -2636,27 +2632,41 @@ a{
 
 .mdl_alert_red {
 	padding: 8px 35px 8px 14px;
-	/*text-shadow: 0 1px 0 rgba(255,255,255,0.5);*/
 	color: #a94442;
 	background-color: #f2dede;
-	border-color: #ebccd1;
-	/*position: fixed;
-	bottom: 0px;
-	width: 100%;
-	z-index: 6000;*/
+	border:1px solid #ebccd1;
 }
 
+.mdl_alert_red:before {
+    content: "\f071";
+    font-family: FontAwesome;
+	margin-right:4px;
+	font-size:1.4em;
+ }
 
 .mdl_alert_green {
 	padding: 8px 35px 8px 14px;
-	/*text-shadow: 0 1px 0 rgba(255,255,255,0.5);*/
 	color: #3c763d;
 	background-color: #dff0d8;
-	border-color: #d6e9c6;
+	border:1px solid #d6e9c6;
 }
 
 .mdl_alert_green:before {
     content: "\f14a";
+    font-family: FontAwesome;
+	margin-right:4px;
+	font-size:1.4em;
+ }
+ 
+ .mdl_alert_blue {
+	padding: 8px 35px 8px 14px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border:1px solid #bce8f1;
+}
+
+.mdl_alert_blue:before {
+    content: "\f05a";
     font-family: FontAwesome;
 	margin-right:4px;
 	font-size:1.4em;
