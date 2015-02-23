@@ -35,10 +35,31 @@ class theme_warwickclean_core_renderer extends core_renderer {
     public function navbar() {
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
-        foreach ($items as $item) {
+/*        foreach ($items as $item) {
             $item->hideicon = true;
             $breadcrumbs[] = $this->render($item);
         }
+*/
+//Only output some nodes
+        $last_node_found = false;
+        $items = array_reverse($items);
+
+        foreach ($items as $item) {
+        //Only output crumbs with links
+			if (navigation_node::TYPE_COURSE == $item->type ||
+				(!$last_node_found && $item->action)) {
+				$last_node_found = true;
+				$item->hideicon = true;
+				$breadcrumbs[] = $this->render($item);
+			}
+
+			if (navigation_node::TYPE_COURSE == $item->type) {
+				//We're done here
+				break;
+			}
+        }
+        $breadcrumbs = array_reverse($breadcrumbs);
+		
         $divider = '<span class="divider">'.get_separator().'</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
@@ -136,15 +157,22 @@ class theme_warwickclean_core_renderer extends core_renderer {
        
         $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 			$branch->add('All Categories',new moodle_url('/course'));
-			$branch->add('Arts',new moodle_url('/course/index.php?categoryid=3'));
+/*			$branch->add('Arts',new moodle_url('/course/index.php?categoryid=3'));
 			$branch->add('Medicine',new moodle_url('/course/index.php?categoryid=31'));
 			$branch->add('Science',new moodle_url('/course/index.php?categoryid=50'));
 			$branch->add('Social Sciences',new moodle_url('/course/index.php?categoryid=60'));
 			$branch->add('Interdisciplinary/Cross-Faculty',new moodle_url('/course/index.php?categoryid=28'));
 			$branch->add('Services',new moodle_url('/course/index.php?categoryid=56'));
 			$branch->add('Sandbox',new moodle_url('/course/index.php?categoryid=51'));
-		
-	// Add a custom link to top navigation
+*/			
+			//Builds category list into menu
+			require_once($CFG->dirroot.'/course/lib.php');
+			$categorytree = get_course_category_tree();
+			foreach ($categorytree as $category) {
+				$this->add_category_to_custommenu($branch, $category);
+			}
+			
+			// Add a custom link to top navigation
             $branchlabel = "Help";
             $branchurl   = new moodle_url('/');
 			$branchtitle = "help";
@@ -420,6 +448,24 @@ class theme_warwickclean_core_renderer extends core_renderer {
         return $loggedinas;
     }
 
-
+	protected function add_category_to_custommenu(custom_menu_item $parent, stdClass $category) {
+		$branch = $parent->add($category->name, new moodle_url('/course/category.php', array('id' =>  $category->id)));
+	//adds subcategories
+	/*
+		if (!empty($category->categories)) {
+			foreach ($category->categories as $subcategory) {
+				$this->add_category_to_custommenu($branch, $subcategory);
+			}
+		}
+	*/
+	//adds courses
+	/*
+		if (!empty($category->courses)) {
+			foreach ($category->courses as $course) {
+				$branch->add($course->shortname, new moodle_url('/course/view.php', array('id' => $course->id)), $course->fullname);
+			}
+		}
+	*/
+	}
 }
 
