@@ -2569,7 +2569,7 @@ body.ie a img{/***removes borders on mage links in IE****/
 	border:0 !important;
 }
 
-#region-main img{/***makes all imgaes in main content area responsive  *****/
+.path-course #region-main img{/***makes all imgaes in main content area responsive  *****/
  height: auto;
  max-width: 100%;
 }
