@@ -1541,3 +1541,12 @@ div.drop_shadow_head{
 	padding:10px 15px;
 	display:table;
 }
+
+/* General
+-------------------------*/	
+
+
+.path-course #region-main img{/***makes all imgaes in main courser content area responsive  *****/
+	height: auto;
+	max-width: 100%;
+}
