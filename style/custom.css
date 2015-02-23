@@ -2574,6 +2574,12 @@ body.ie a img{/***removes borders on image links in IE****/
 	max-width: 100%;
 }
 
+
+#head_cont1 img{/***makes all imgaes ihtml editor  responsive  *****/
+	height: auto;
+	max-width: 100%;
+}
+
 /* Links over multiple lines
 -------------------------*/
 
