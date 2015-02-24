@@ -2565,13 +2565,26 @@ span#mmsg{
 	color:#933;
 }
 
-body.ie a img{/***removes borders on mage links in IE****/
+body.ie a img{/***removes borders on image links in IE****/
 	border:0 !important;
 }
 
-#region-main img{/***makes all imgaes in main content area responsive  *****/
- height: auto;
- max-width: 100%;
+/* Responsive image fixes
+-------------------------*/	
+
+#region-main img{/***makes all imgaes in main course content area responsive  *****/
+	height: auto;
+	max-width: 100%;
+}
+
+#head_cont1 img, .drop_shadow_head.lifted_bot img{ /***images used ifor header template are responsive in TinyMCE *****/
+	height: auto;
+	max-width: 100%;
+}
+
+#page-mod-feedback-analysis img.feedback_bar_image{
+	height:10px;
+	margin-right:5px;
 }
 
 /* Links over multiple lines
