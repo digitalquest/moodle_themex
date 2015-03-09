@@ -14,7 +14,7 @@
         </form>
  		</div>
    
-   <?php $PAGE->navbar();?>
+   <?php echo $PAGE->navigation(); ?>
    
 		<div id="wbar-log-outer">
    			<ul id="wbar-login">
