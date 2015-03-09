@@ -469,3 +469,25 @@ class theme_warwickclean_core_renderer extends core_renderer {
 	}
 }
 
+class theme_clean_core_renderer extends theme_bootstrapbase_core_renderer {
+ 
+}
+
+include_once($CFG->dirroot . "/blocks/navigation/renderer.php");
+ 
+class theme_clean_block_navigation_renderer extends block_navigation_renderer {
+ 
+  public function navigation_node($items, $attrs=array(), $expansionlimit=null, array $options = array(), $depth=1) {
+    global $USER, $CFG;
+    
+    // remove the 'Site home' link from the list
+    foreach ($items as $item) {
+      if ($item->type == navigation_node::TYPE_SETTING && $item->title == get_string('sitehome')) {
+        $item->remove();
+      }
+    }
+    
+    return parent::navigation_node($items, $attrs, $expansionlimit, $options, $depth);
+  }
+}
+
