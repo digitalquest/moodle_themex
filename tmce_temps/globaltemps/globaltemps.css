@@ -86,6 +86,8 @@ h2#getting-organised {
 	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/getting_organised_banner.jpg")50% 60%;
 }
 
+
+
 /*i.fa {
 	min-width: 50px;
 	text-align: center;
@@ -396,6 +398,11 @@ h2#current-awareness {
 h2#getting-organised {
 	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/getting_organised_banner.jpg")50% 60%;
 }
+
+h2#bibliometrics {
+	background: url("/theme/warwickclean/tmce_temps/digi_tools/images/bibliometrics.png")55% 60%;
+}
+
 
 h2.inverted {
 	color: #000 !important;
