@@ -14,7 +14,7 @@
         </form>
  		</div>
    
-   <?php $PAGE->navbar->ignore_active();?>
+   <?php $PAGE->navbar();?>
    
 		<div id="wbar-log-outer">
    			<ul id="wbar-login">
