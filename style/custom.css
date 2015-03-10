@@ -2571,7 +2571,6 @@ div.drop_shadow_lighter.lifted_bot.stream_msg{
 	font-size:14px;
 	line-height:1.2;
 	font-family:"Open Sans", Helvetica, Arial, Verdana, sans-serif;
-	font-weight:bold;
 }
 
 #page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg i{
@@ -2582,6 +2581,7 @@ div.drop_shadow_lighter.lifted_bot.stream_msg{
 
 #page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg span{
 	margin-left:25px;
+	display:block;
 }
 
 
