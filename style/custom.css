@@ -2558,6 +2558,14 @@ span.mceIcon.mce_helixmedia, #id_summary_editor_helixmedia{
 }
 
 
+div.drop_shadow_lighter.lifted_bot.stream_msg{
+	display:none;
+}
+
+#page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg{
+	display:block;
+}
+
 
 /* General
 -------------------------*/	
