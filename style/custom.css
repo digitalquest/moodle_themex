@@ -2565,9 +2565,11 @@ div.drop_shadow_lighter.lifted_bot.stream_msg{
 #page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg{
 	display:block;
 	color: #C09853;
-	padding: 8px 35px 8px 14px;
+	padding: 8px;
 	background-color: #FCF8E3;
 	border: 1px solid #FAEBCC;
+	font-size:1em;
+	line-height:1.2;
 }
 
 
