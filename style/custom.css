@@ -2565,14 +2565,13 @@ div.drop_shadow_lighter.lifted_bot.stream_msg{
 #page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg{
 	display:block;
 	color: #C09853;
-	padding: 8px;
+	padding: 12px;
 	background-color: #FCF8E3;
 	border: 1px solid #FAEBCC;
 	font-size:14px;
-	line-height:1.2;
+	line-height:1.4;
 	font-family:"Open Sans", Helvetica, Arial, Verdana, sans-serif;
-	max-width: 750px;
-	min-width:100px !important
+	max-width: 770px;
 }
 
 #page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg i{
