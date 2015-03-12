@@ -2538,6 +2538,12 @@ iframe[id^=hmlvid] { /*http://www.css3.info/preview/attribute-selectors/  CSS3 o
 }
 */
 
+
+label[for=id_assignsubmission_helixassign_enabled], input[name=assignsubmission_helixassign_enabled]{
+	display:none !important;
+}
+
+
 span.mceIcon.mce_helixmedia img{
 	display:none;
 }
