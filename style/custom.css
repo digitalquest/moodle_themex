@@ -2568,8 +2568,8 @@ div.drop_shadow_lighter.lifted_bot.stream_msg{
 	display:none;
 }
 
-#page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg{
-	display:block;
+#page-mod-assign-view div.editsubmissionform div.drop_shadow_lighter.lifted_bot.stream_msg{
+	display:block !important;
 	padding: 10px;
 	/*background-color: #FCF8E3;
 	border: 1px solid #FAEBCC;
