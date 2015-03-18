@@ -35,28 +35,28 @@ class theme_warwickclean_core_renderer extends core_renderer {
     public function navbar() {
         $items = $this->page->navbar->get_items();
         $breadcrumbs = array();
-/*        foreach ($items as $item) {
-            $item->hideicon = true;
-            $breadcrumbs[] = $this->render($item);
-        }
-*/
-//Only output some nodes
+	//Only output some nodes
         $last_node_found = false;
         $items = array_reverse($items);
 
         foreach ($items as $item) {
         //Only output crumbs with links
-			if (navigation_node::TYPE_COURSE == $item->type ||
-				(!$last_node_found && $item->action)) {
-				$last_node_found = true;
-				$item->hideicon = true;
-				$breadcrumbs[] = $this->render($item);
-			}
-
+		if (navigation_node::TYPE_CATEGORY == $item->type || navigation_node::TYPE_COURSE == $item->type ||
+			(!$last_node_found && $item->action)) {
+			$last_node_found = true;
+			$item->hideicon = true;
+			// add class to item if it is a course. to change its look
 			if (navigation_node::TYPE_COURSE == $item->type) {
-				//We're done here
-				break;
+			  $item->add_class('course-highlight'); // adding a class to the item doesn't seem to work
+			  $item->hideicon = false; // we set the icon to show. when adding a class works, this line can be removed
 			}
+			$breadcrumbs[] = $this->render($item);
+		}
+		//When we find the firt parent category we can stop processing the items
+		if (navigation_node::TYPE_CATEGORY == $item->type) {
+			//We're done here
+			break;
+		}
         }
         $breadcrumbs = array_reverse($breadcrumbs);
 		
