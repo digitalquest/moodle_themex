@@ -49,6 +49,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
 			if (navigation_node::TYPE_COURSE == $item->type) {
 			  $item->add_class('course-highlight'); // adding a class to the item doesn't seem to work
 			  $item->hideicon = false; // we set the icon to show. when adding a class works, this line can be removed
+			  $item->text = '<span class="'.get_string('course_highlight','theme_warwickclean').'">'.$item->text.'</span>'; //adding a class this way should work
 			}
 			$breadcrumbs[] = $this->render($item);
 		}
