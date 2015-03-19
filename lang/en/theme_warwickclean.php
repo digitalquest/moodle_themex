@@ -71,4 +71,4 @@ a.logo {height: 100px;} or whatever height in pixels the logo is.';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 //class to highlight course in breadcrumbs
-$string['course_highlight']='course-highlight';
+$string['breadcrumbs_course']='breadcrumbs-course';
