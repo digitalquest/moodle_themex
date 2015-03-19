@@ -33,33 +33,73 @@ class theme_warwickclean_core_renderer extends core_renderer {
      * Uses bootstrap compatible html.
      */
     public function navbar() {
+		// presumes the breadcrumbs doesn't 'contain' a course item:
+		// we are not on a course page or in an activity inside a course
+		$is_course = false; 
         $items = $this->page->navbar->get_items();
-        $breadcrumbs = array();
-	//Only output some nodes
-        $last_node_found = false;
-        $items = array_reverse($items);
-
+		//go through all the breadcrumbs items
+		//if one of them is a course, we are on a course page or in an item/activity that belongs to a course
         foreach ($items as $item) {
-        //Only output crumbs with links
-		if (navigation_node::TYPE_CATEGORY == $item->type || navigation_node::TYPE_COURSE == $item->type ||
-			(!$last_node_found && $item->action)) {
-			$last_node_found = true;
-			$item->hideicon = true;
-			// add class to item if it is a course. to change its look
-			if (navigation_node::TYPE_COURSE == $item->type) {
-			  $item->add_class('course-highlight'); // adding a class to the item doesn't seem to work
-			  $item->hideicon = false; // we set the icon to show. when adding a class works, this line can be removed
-			  $item->text = '<span class="'.get_string('course_highlight','theme_warwickclean').'">'.$item->text.'</span>'; //adding a class this way should work
-			}
-			$breadcrumbs[] = $this->render($item);
-		}
-		//When we find the firt parent category we can stop processing the items
-		if (navigation_node::TYPE_CATEGORY == $item->type) {
-			//We're done here
-			break;
-		}
+            if (!$is_course) {
+                $is_course = (navigation_node::TYPE_COURSE == $item->type);
+            }
         }
-        $breadcrumbs = array_reverse($breadcrumbs);
+		//initialise the breadcrumbs array
+        $breadcrumbs = array();
+		
+		//we apply the logic only if we are on a course page or 'below' a course page
+		//(i.e. in an activity inside a course or something that belongs to a course)
+		if ($is_course) {
+			//Only render: last_clickable_item<-parent_course<-parent_category
+			//Will only render the 1st parent category, course node and the last node in the breadcrumbs - if any and if clickable ($item->action is not null)
+			$last_node_found = false;       //presumes we have not yet found the last item in the breadcrumbs
+			$items = array_reverse($items); //reverses the breadcrumbs; the last item becomes the first
+
+			// starts looping through all the items in the breadcrumbs
+			foreach ($items as $item) {
+			//Only render a category or a course
+			//or the last item if it is clickable ($item->action is not null)
+				if (navigation_node::TYPE_CATEGORY == $item->type || navigation_node::TYPE_COURSE == $item->type ||
+					(!$last_node_found && $item->action)) {
+					// the first item we process 'states' we have found the last item in the breadcrumbs
+					// the breadcrumbs were reversed so the 1st time we enter the foreach loop, we are on the last node 
+					// once set to true, last_node_found will always be true
+					$last_node_found = true; 
+					// hide the image icon on the item						 
+					$item->hideicon = true;  
+					// add a class to item if it is a course; to change its look
+					if (navigation_node::TYPE_COURSE == $item->type) {
+					  //set the class we want to apply to a course item; take it from the language file
+					  $course_class = get_string('breadcrumbs_course','theme_warwickclean');
+					  // adding a class to the item; but doesn't seem to work
+					  $item->add_class($course_class);
+					  // we set the icon to show. when adding a class works, this line can be removed
+					  $item->hideicon = false; 
+					  //trying another way to add a class to a course item;
+					  //doesn't seem to work either
+					  $item->text = "<span class=\'$course_class\'>$item->text</span>"; 
+					}
+					//render the item; the item is either:
+					//the last clickable item, the parent course or the 1st parent category
+					$breadcrumbs[] = $this->render($item);
+				}
+				//When we find the firt parent category we stop looping through the items
+				if (navigation_node::TYPE_CATEGORY == $item->type) {
+					//We're done here. exit the foreach loop
+					//We don't show more than one category in the breadcrumbs
+					break;
+				}
+			}
+			//put the breadcrumbs back in the correct order
+			$breadcrumbs = array_reverse($breadcrumbs);
+		}
+		else { //we are not on a course page or 'below' a course page
+			//render all navigation nodes
+            foreach ($items as $item) {
+                $item->hideicon = true;
+                $breadcrumbs[] = $this->render($item);
+            }
+		}
 		
         $divider = '<span class="divider">'.get_separator().'</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
