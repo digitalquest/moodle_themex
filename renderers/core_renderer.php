@@ -98,7 +98,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
 		foreach ($breadcrumbs as $breadcrumb) {
 			$list_items .= " $divider</li><li";
 			//if (breadcrumb->type == navigation_node::TYPE_COURSE) $list_items .= " class=\'$course_class\' ";
-			$list_items .= ">$this->render($breadcrumb)";
+			$list_items .= ">". $this->render($breadcrumb);
 		}
 		$list_items .= '</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
