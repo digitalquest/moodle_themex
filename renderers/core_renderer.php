@@ -40,7 +40,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
 		//go through all the breadcrumbs items
 		//if one of them is a course, we are on a course page or in an item/activity that belongs to a course
         foreach ($items as $item) {
-            if (!$is_course) {
+            if (!$is_course) { //once one course item is found it's not necessary checking others
                 $is_course = (navigation_node::TYPE_COURSE == $item->type);
             }
         }
@@ -67,21 +67,10 @@ class theme_warwickclean_core_renderer extends core_renderer {
 					$last_node_found = true; 
 					// hide the image icon on the item						 
 					$item->hideicon = true;  
-					// add a class to item if it is a course; to change its look
-					if (navigation_node::TYPE_COURSE == $item->type) {
-					  //set the class we want to apply to a course item; take it from the language file
-					  $course_class = get_string('breadcrumbs_course','theme_warwickclean');
-					  // adding a class to the item; but doesn't seem to work
-					  $item->add_class($course_class);
-					  // we set the icon to show. when adding a class works, this line can be removed
-					  $item->hideicon = false; 
-					  //trying another way to add a class to a course item;
-					  //doesn't seem to work either
-					  $item->text = "<span class=\'$course_class\'>$item->text</span>"; 
-					}
 					//render the item; the item is either:
 					//the last clickable item, the parent course or the 1st parent category
-					$breadcrumbs[] = $this->render($item);
+					$breadcrumbs[] = $item;
+					/*$breadcrumbs[] = $this->render($item);*/
 				}
 				//When we find the firt parent category we stop looping through the items
 				if (navigation_node::TYPE_CATEGORY == $item->type) {
@@ -97,14 +86,24 @@ class theme_warwickclean_core_renderer extends core_renderer {
 			//render all navigation nodes
             foreach ($items as $item) {
                 $item->hideicon = true;
-                $breadcrumbs[] = $this->render($item);
+				$breadcrumbs[] = $item;
+                /*$breadcrumbs[] = $this->render($item);*/
             }
 		}
 		
         $divider = '<span class="divider">'.get_separator().'</span>';
-        $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
+		$course_class = get_string('breadcrumbs_course','theme_warwickclean');
+        /*$list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';*/
+		$list_items = '<li>';
+		foreach ($breadcrumbs as $breadcrumb) {
+			$list_items .= " $divider</li><li";
+			if (breadcrumb->type == navigation_node::TYPE_COURSE) $list_items .= " class=\"$course_class\" " ;
+			$list_items .= ">$this->render($breadcrumb)";
+		}
+		$list_items .= '</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
         return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
+		
     }
 
     /*
