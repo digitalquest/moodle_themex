@@ -2563,6 +2563,15 @@ span.mceIcon.mce_helixmedia, #id_summary_editor_helixmedia{
 	display:none !important;
 }
 
+.course-8001 span.mceIcon.mce_helixmedia, #id_summary_editor_helixmedia{
+	display:inline !important;
+}
+
+.course-8001 .dir-rtl .moodleSkin .mceToolbar select, .moodleSkin .mceToolbar a.mceButton.mce_helixmedia{
+	display:inline !important;
+}
+
+
 
 div.drop_shadow_lighter.lifted_bot.stream_msg{
 	display:none;
