@@ -2456,6 +2456,12 @@ div.submissionstatustable, div.submissionfull, div.submissionlinks, div.usersumm
 margin-bottom: 1em;
 }
 
+#mod_assign_grading_r0_c7 a{
+	background: #c7ecfb;
+	background:#fff;
+  	padding: 4px;
+  	border: 4px #b1e4f9 solid;
+}
 
 /* Gradebook Fixes
 -------------------------*/	
@@ -2552,9 +2558,10 @@ label[for=id_assignsubmission_helixassign_enabled], input[name=assignsubmission_
 	display:none !important;
 }
 
-/*.category-158 label[for=id_assignsubmission_helixassign_enabled], .category-158 input[name=assignsubmission_helixassign_enabled]{
+
+.category-158 label[for=id_assignsubmission_helixassign_enabled], .category-158 input[name=assignsubmission_helixassign_enabled]{
 	display:block !important;
-}*/
+}
 
 /*********************Tiny MCE Helix button**************/
 
