@@ -59,7 +59,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
 			foreach ($items as $item) {
 			//Only render a category or a course
 			//or the last item if it is clickable ($item->action is not null)
-				if (navigation_node::TYPE_CATEGORY == $item->type || navigation_node::TYPE_COURSE == $item->type ||
+				if (navigation_node::TYPE_CATEGORY == $item->type || navigation_node::TYPE_COURSE == $item->type || navigation_node::TYPE_SECTION == $item->type ||
 					(!$last_node_found && $item->action)) {
 					// the first item we process 'states' we have found the last item in the breadcrumbs
 					// the breadcrumbs were reversed so the 1st time we enter the foreach loop, we are on the last node 
