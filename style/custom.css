@@ -234,7 +234,7 @@ div.course_category_tree h1,div.course_category_tree h2,div.course_category_tree
 	letter-spacing:normal;
 }
 
-/*#page-course-index-category .generalbox.info {
+#page-course-index-category .generalbox.info {
 	background: #55b5eb;
 	padding: 7px 7px;
 	color:#fff;
@@ -243,12 +243,12 @@ div.course_category_tree h1,div.course_category_tree h2,div.course_category_tree
 	font-weight:bold;
 	line-height:1.2;
 }
-*/
+
 /* WMG Category test
 -------------------------*/
-#page-course-index-category .category-15 .generalbox.info {
-	padding:0px !important;
-	background-color: #fff !important;
+#page-course-index-category .category-15  .generalbox.info {
+	padding:0px;
+	background-color: #fff;
 }
 
 
