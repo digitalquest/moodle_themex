@@ -246,7 +246,7 @@ div.course_category_tree h1,div.course_category_tree h2,div.course_category_tree
 
 /* WMG Category test
 -------------------------*/
-#page-course-index-category.category-15  .generalbox.info {
+#page-course-index-category .category-15  .generalbox.info {
 	padding:0px;
 	background-color: #F7F7F9;
 	border: 1px solid #E1E1E8;
