@@ -246,13 +246,19 @@ div.course_category_tree h1,div.course_category_tree h2,div.course_category_tree
 
 /* WMG Category test
 -------------------------*/
-#page-course-index-category .category-15  .generalbox.info {
+#page-course-index-category.category-15  .generalbox.info {
 	padding:0px !important;
 	background-color:none !important;
 	font-size:1.0em !important;
+	background:none !important;
+	font-weight:normal;
+	color:#333;
 }
 
 
+#page-course-index-category.category-15  #page, #page-course-index-category.category-15  .container-fluid,#page-course-index-category.category-15  #wbar-inner,#page-course-index-category.category-15  #page-navbar,#page-course-index-category.category-15  #footer-inner,#page-course-index-category.category-15  #vbot-cont-container{
+	max-width:980px; 
+}
 
 
 /* Links
@@ -2777,6 +2783,3 @@ a.longlink{
 	top: 2px
  }
 
-body{
-	font-size:36px;
-}
