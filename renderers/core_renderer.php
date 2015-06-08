@@ -524,7 +524,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
             if (!empty($user->imagealt)) {
                 $alt = $user->imagealt;
             } else {
-                $alt = get_string('pictureof', '', fullname($user)." ".profile_user_record($userid));
+                $alt = get_string('pictureof', '', profile_user_record($userid)."Rich");
             }
         } else {
             $alt = '';
