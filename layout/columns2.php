@@ -1,6 +1,6 @@
 <?php
 
-print_object($USER);
+//print_object($USER);
 //print_object($COURSE);
 
 /******print cat details https://moodle.org/mod/forum/discuss.php?d=204195 ******/
