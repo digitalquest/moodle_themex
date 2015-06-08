@@ -525,6 +525,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
                 $alt = $user->imagealt;
             } else {
                 $alt = get_string('pictureof', '', fullname($user)." ". $user->email);
+				echo '<br/><a href="https://tabula.warwick.ac.uk/profiles/view/1431143">Link</a>';
             }
         } else {
             $alt = '';
