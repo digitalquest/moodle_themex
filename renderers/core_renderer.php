@@ -508,5 +508,77 @@ class theme_warwickclean_core_renderer extends core_renderer {
 		}
 	*/
 	}
+	
+	  /**
+     ************ OVERRIDE Output Renderes ************ implementation of user image rendering.
+     *
+     * @param user_picture $userpicture
+     * @return string
+     */
+    protected function render_user_picture(user_picture $userpicture) {
+        global $CFG, $DB;
+
+        $user = $userpicture->user;
+
+        if ($userpicture->alttext) {
+            if (!empty($user->imagealt)) {
+                $alt = $user->imagealt;
+            } else {
+                $alt = get_string('pictureof you', '', fullname($user));
+            }
+        } else {
+            $alt = '';
+        }
+
+        if (empty($userpicture->size)) {
+            $size = 35;
+        } else if ($userpicture->size === true or $userpicture->size == 1) {
+            $size = 100;
+        } else {
+            $size = $userpicture->size;
+        }
+
+        $class = $userpicture->class;
+
+        if ($user->picture == 0) {
+            $class .= ' defaultuserpic';
+        }
+
+        $src = $userpicture->get_url($this->page, $this);
+
+        $attributes = array('src'=>$src, 'alt'=>$alt, 'title'=>$alt, 'class'=>$class, 'width'=>$size, 'height'=>$size);
+
+        // get the image html output fisrt
+        $output = html_writer::empty_tag('img', $attributes);
+
+        // then wrap it in link if needed
+        if (!$userpicture->link) {
+            return $output;
+        }
+
+        if (empty($userpicture->courseid)) {
+            $courseid = $this->page->course->id;
+        } else {
+            $courseid = $userpicture->courseid;
+        }
+
+        if ($courseid == SITEID) {
+            $url = new moodle_url('/user/profile.php', array('id' => $user->id));
+        } else {
+            $url = new moodle_url('/user/view.php', array('id' => $user->id, 'course' => $courseid));
+        }
+
+        $attributes = array('href'=>$url);
+
+        if ($userpicture->popup) {
+            $id = html_writer::random_id('userpicture');
+            $attributes['id'] = $id;
+            $this->add_action_handler(new popup_action('click', $url), $id);
+        }
+
+        return html_writer::tag('a', $output, $attributes);
+    }
+
+	
 }
 
