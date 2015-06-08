@@ -1,5 +1,16 @@
 <?php
+
 print_object($USER);
+//print_object($COURSE);
+
+/******print cat details https://moodle.org/mod/forum/discuss.php?d=204195 ******/
+//global $PAGE;
+//print_object($PAGE->category);
+//print_object($PAGE);
+//print_object($PAGE->categories);
+//echo $PAGE->category->description;
+
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
