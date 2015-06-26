@@ -2659,6 +2659,15 @@ body.ie a img{/***removes borders on image links in IE****/
 	border:0 !important;
 }
 
+.list-m15{
+	margin-left:15px
+}
+	
+.list-m15 li{
+	margin-bottom:7px;
+}
+
+
 /* Responsive image fixes
 -------------------------*/	
 
