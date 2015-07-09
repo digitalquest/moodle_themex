@@ -190,8 +190,8 @@ $(document).ready(function(){
             </div>
         
         <div class="span4 frontbox">
-        	<h2><span class="fa-stack "><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-refresh fa-stack-1x fa-inverse"></i></span>Moodle 2.6 Features</h2>
-            <p>We are currently running version 2.6 of Moodle which brings a host of improvements over past releases including a mobile friendly responsive design, new drag and drop functionality and improved assignment options. Please take a moment to read about the new features included in Moodle 2.6.</p>
+        	<h2><span class="fa-stack "><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-refresh fa-stack-1x fa-inverse"></i></span>Moodle 2.8 Features</h2>
+            <p>We are currently running version 2.8 of Moodle which brings a host of improvements including enhanced forums, improved assignment and quiz options. Follow the link below to find out more about the new features and improvements included in Moodle 2.8</p>
   <p id="newbut"><a class="btn btn-default" href="http://docs.moodle.org/26/en/New_features" target="_blank">What's New  <i class="fa fa-arrow-right greyawes"></i></a></p>
 <!-- <p><a class="btn btn-moo-blue  pad-but" href="#"><i class="fa fa-chevron-right"></i> What's New</a></p>-->
         </div>

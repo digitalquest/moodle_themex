@@ -1603,13 +1603,13 @@ a.sicon:hover{
 	max-height: 40px;
 }
 
-.section .activity .commands {
+/*.section .activity .commands {
 	position: absolute;
 	right: 0px;
 	float: right;
 	text-align: right;
 	top: 0px
-}
+}*/
 
 .course-content ul.section {
  	margin: 0; 
@@ -1711,9 +1711,9 @@ width: auto;
 
 
 .course-content ul.ctopics li.section .content .toggle, .course-content ul.ctopics li.section .content.sectionhidden {
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
+	-moz-border-radius: 4px !important;
+	-webkit-border-radius: 4px !important;
+	border-radius: 4px !important;
 }
 
 .course-content ul.ctopics li.section .content .toggle a h3.sectionname, .course-content ul.ctopics li.section .content.sectionhidden h3.sectionname{
@@ -1772,12 +1772,18 @@ div.sectionbody.toggle-point-hover.toggle-point a{
 
 
 .course-content ul.ctopics li.section .content .toggle.toggle-point a {
-padding: 4px 20px 4px 20px;
+	padding: 8px 20px 8px 20px;
 }
 
 div.sectionbody.toggle-point-hover.toggle-point h4 a{
 	font-family: "Arial", Helvetica, Arial, Verdana, sans-serif;
 	letter-spacing:normal;
+}
+
+div.toggle h3{
+	color: #545454;
+	font-size: 1.3em;
+ 	font-weight: 600;
 }
 
 .toggle-point .the_toggle,  #toggle-all .content .toggle-point h4 a.on, #toggle-all .content .toggle-point h4 a.off{
@@ -1803,7 +1809,7 @@ div.sectionbody.toggle-point-hover.toggle-point h4 a{
   	font-size: 14px;
     padding-right: 0.5em;
     position: absolute;
-    top: 16px;
+    top: 15px;
 	margin-left:5px;
     left: 0;
 	color:#93939a;
