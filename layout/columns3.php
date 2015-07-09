@@ -1,5 +1,6 @@
 <?php
 
+
 //print_object($USER);
 //print_object($COURSE);
 
@@ -93,7 +94,7 @@ $(document).ready(function(){
 <body <?php echo $OUTPUT->body_attributes($bodyCustomClass); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-<?php echo $html->footnote; ?>
+
 <header role="banner" class="navbar navbar-fixed-top<?php echo $html->navbarclass ?> moodle-has-zindex">
 <?php include ('header.php'); ?>
 <div id="affix-wrap">

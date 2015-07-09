@@ -33,78 +33,16 @@ class theme_warwickclean_core_renderer extends core_renderer {
      * Uses bootstrap compatible html.
      */
     public function navbar() {
-		// presumes the breadcrumbs doesn't 'contain' a course item:
-		// we are not on a course page or in an activity inside a course
-		$is_course = false; 
         $items = $this->page->navbar->get_items();
-		//go through all the breadcrumbs items
-		//if one of them is a course, we are on a course page or in an item/activity that belongs to a course
-        foreach ($items as $item) {
-            if (!$is_course) { //once one course item is found it's not necessary checking others
-                $is_course = (navigation_node::TYPE_COURSE == $item->type);
-            }
-        }
-		//initialise the breadcrumbs array
         $breadcrumbs = array();
-		
-		//we apply the logic only if we are on a course page or 'below' a course page
-		//(i.e. in an activity inside a course or something that belongs to a course)
-		if ($is_course) {
-			//Only render: last_clickable_item<-parent_course<-parent_category
-			//Will only render the 1st parent category, course node and the last node in the breadcrumbs - if any and if clickable ($item->action is not null)
-			$last_node_found = false;       //presumes we have not yet found the last item in the breadcrumbs
-			$items = array_reverse($items); //reverses the breadcrumbs; the last item becomes the first
-
-			// starts looping through all the items in the breadcrumbs
-			foreach ($items as $item) {
-			//Only render a category or a course
-			//or the last item if it is clickable ($item->action is not null)
-				if( ($item->action) && (navigation_node::TYPE_CATEGORY == $item->type || navigation_node::TYPE_COURSE == $item->type || navigation_node::TYPE_SECTION == $item->type ||
-					(!$last_node_found) ) ){
-					// the first item we process 'states' we have found the last item in the breadcrumbs
-					// the breadcrumbs were reversed so the 1st time we enter the foreach loop, we are on the last node 
-					// once set to true, last_node_found will always be true
-					$last_node_found = true; 
-					// hide the image icon on the item						 
-					$item->hideicon = true;  
-					//render the item; the item is either:
-					//the last clickable item, the parent course or the 1st parent category
-					$breadcrumbs[] = $item;
-					/*$breadcrumbs[] = $this->render($item);*/
-				}
-				//When we find the firt parent category we stop looping through the items
-				if (navigation_node::TYPE_CATEGORY == $item->type) {
-					//We're done here. exit the foreach loop
-					//We don't show more than one category in the breadcrumbs
-					break;
-				}
-			}
-			//put the breadcrumbs back in the correct order
-			$breadcrumbs = array_reverse($breadcrumbs);
-		}
-		else { //we are not on a course page or 'below' a course page
-			//render all navigation nodes
-            foreach ($items as $item) {
-                $item->hideicon = true;
-				$breadcrumbs[] = $item;
-                /*$breadcrumbs[] = $this->render($item);*/
-            }
-		}
-		
+        foreach ($items as $item) {
+            $item->hideicon = true;
+            $breadcrumbs[] = $this->render($item);
+        }
         $divider = '<span class="divider">'.get_separator().'</span>';
-		$course_class = get_string('breadcrumbs_course','theme_warwickclean');
-        /*$list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';*/
-		$list_items = "<li>";
-		foreach ($breadcrumbs as $breadcrumb) {
-			$list_items .= " $divider</li><li";
-			//apply a class to course item
-			if ($breadcrumb->type == navigation_node::TYPE_COURSE) $list_items .= " class=\"$course_class\" ";
-			$list_items .= ">". $this->render($breadcrumb);
-		}
-		$list_items .= '</li>';
+        $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
         return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
-		
     }
 
     /*
@@ -198,22 +136,15 @@ class theme_warwickclean_core_renderer extends core_renderer {
        
         $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 			$branch->add('All Categories',new moodle_url('/course'));
-/*			$branch->add('Arts',new moodle_url('/course/index.php?categoryid=3'));
+			$branch->add('Arts',new moodle_url('/course/index.php?categoryid=3'));
 			$branch->add('Medicine',new moodle_url('/course/index.php?categoryid=31'));
 			$branch->add('Science',new moodle_url('/course/index.php?categoryid=50'));
 			$branch->add('Social Sciences',new moodle_url('/course/index.php?categoryid=60'));
 			$branch->add('Interdisciplinary/Cross-Faculty',new moodle_url('/course/index.php?categoryid=28'));
 			$branch->add('Services',new moodle_url('/course/index.php?categoryid=56'));
 			$branch->add('Sandbox',new moodle_url('/course/index.php?categoryid=51'));
-*/			
-			//Builds category list into menu
-			require_once($CFG->dirroot.'/course/lib.php');
-			$categorytree = get_course_category_tree();
-			foreach ($categorytree as $category) {
-				$this->add_category_to_custommenu($branch, $category);
-			}
-			
-			// Add a custom link to top navigation
+		
+	// Add a custom link to top navigation
             $branchlabel = "Help";
             $branchurl   = new moodle_url('/');
 			$branchtitle = "help";
@@ -489,97 +420,6 @@ class theme_warwickclean_core_renderer extends core_renderer {
         return $loggedinas;
     }
 
-	protected function add_category_to_custommenu(custom_menu_item $parent, stdClass $category) {
-		$branch = $parent->add($category->name, new moodle_url('/course/category.php', array('id' =>  $category->id)));
-	//adds subcategories
-	/*
-		if (!empty($category->categories)) {
-			foreach ($category->categories as $subcategory) {
-				$this->add_category_to_custommenu($branch, $subcategory);
-			}
-		}
-	*/
-	//adds courses
-	/*
-		if (!empty($category->courses)) {
-			foreach ($category->courses as $course) {
-				$branch->add($course->shortname, new moodle_url('/course/view.php', array('id' => $course->id)), $course->fullname);
-			}
-		}
-	*/
-	}
-	
-	  /**
-     ************ OVERRIDE OUTPUT RENDERES(outputrenderers.php) ************ 
-	 Implementation of user image rendering.
-     *
-     * @param user_picture $userpicture
-     * @return string
-     */
-    protected function render_user_picture(user_picture $userpicture) {
-        global $CFG, $DB;
 
-        $user = $userpicture->user;
-
-        if ($userpicture->alttext) {
-            if (!empty($user->imagealt)) {
-                $alt = $user->imagealt;
-            } else {
-                $alt = get_string('pictureof', '', fullname($user)." ". $user->email);
-            }
-        } else {
-            $alt = '';
-        }
-
-        if (empty($userpicture->size)) {
-            $size = 35;
-        } else if ($userpicture->size === true or $userpicture->size == 1) {
-            $size = 100;
-        } else {
-            $size = $userpicture->size;
-        }
-
-        $class = $userpicture->class;
-
-        if ($user->picture == 0) {
-            $class .= ' defaultuserpic';
-        }
-
-        $src = $userpicture->get_url($this->page, $this);
-
-        $attributes = array('src'=>$src, 'alt'=>$alt, 'title'=>$alt, 'class'=>$class, 'width'=>$size, 'height'=>$size);
-
-        // get the image html output fisrt
-        $output = html_writer::empty_tag('img', $attributes);
-
-        // then wrap it in link if needed
-        if (!$userpicture->link) {
-            return $output;
-        }
-
-        if (empty($userpicture->courseid)) {
-            $courseid = $this->page->course->id;
-        } else {
-            $courseid = $userpicture->courseid;
-        }
-
-        if ($courseid == SITEID) {
-            $url = new moodle_url('/user/profile.php', array('id' => $user->id));
-        } else {
-            $url = new moodle_url('/user/view.php', array('id' => $user->id, 'course' => $courseid));
-        }
-
-        $attributes = array('href'=>$url);
-
-        if ($userpicture->popup) {
-            $id = html_writer::random_id('userpicture');
-            $attributes['id'] = $id;
-            $this->add_action_handler(new popup_action('click', $url), $id);
-        }
-
-        return html_writer::tag('a', $output, $attributes);
-    }
-
-	
 }
 
