@@ -2798,3 +2798,21 @@ a.longlink{
 	top: 2px
  }
 
+/* Condtional Acces Display fixes
+-------------------------*/
+
+a.conditionalhidden:link{
+	color:#1c5793;
+	text-decoration: none;
+}
+
+
+a.conditionalhidden:hover, a.conditionalhidden:focus {
+	color: #2793dd;
+	text-decoration:none;
+}
+
+a.dimmed.conditionalhidden{
+	color:grey !important;
+	text-decoration: none;
+}
