@@ -187,3 +187,132 @@ function theme_warwickclean_page_init(moodle_page $page){
 	$page->requires->jquery_plugin('migrate', 'theme_warwickclean');
 }
 
+/*
+*
+*
+*
+*
+*
+*
+*/
+   class theme_warwickclean_transmuted_user_picture extends user_picture {
+
+        public function __construct(user_picture $userpicture) {
+            parent::__construct($userpicture->user);
+        }
+
+        /**
+         * Works out the URL for the users picture.
+         *
+         * This method is recommended as it avoids costly redirects of user pictures
+         * if requests are made for non-existent files etc.
+         *
+         * @param moodle_page $page
+         * @param renderer_base $renderer
+         * @return moodle_url
+         */
+        public function get_url(moodle_page $page, renderer_base $renderer = null) {
+            global $CFG;
+            if (is_null($renderer)) {
+                $renderer = $page->get_renderer('core');
+            }
+            // Sort out the filename and size. Size is only required for the gravatar
+            // implementation presently.
+            if (empty($this->size)) {
+                $filename = 'f2';
+                $size = 35;
+            } else if ($this->size === true or $this->size == 1) {
+                $filename = 'f1';
+                $size = 100;
+            } else if ($this->size > 100) {
+                $filename = 'f3';
+                $size = (int)$this->size;
+            } else if ($this->size >= 50) {
+                $filename = 'f1';
+                $size = (int)$this->size;
+            } else {
+                $filename = 'f2';
+                $size = (int)$this->size;
+            }
+            $defaulturl = $renderer->pix_url('u/'.$filename); // default image
+            if ((!empty($CFG->forcelogin) and !isloggedin()) ||
+                (!empty($CFG->forceloginforprofileimage) && (!isloggedin() || isguestuser()))) {
+                // Protect images if login required and not logged in;
+                // also if login is required for profile images and is not logged in or guest
+                // do not use require_login() because it is expensive and not suitable here anyway.
+                return $defaulturl;
+            }
+            // First try to detect deleted users - but do not read from database for performance reasons!
+            if (!empty($this->user->deleted) or strpos($this->user->email, '@') === false) {
+                // All deleted users should have email replaced by md5 hash,
+                // all active users are expected to have valid email.
+                return $defaulturl;
+            }
+            // Did the user upload a picture?
+            if ($this->user->picture > 0) {
+                if (!empty($this->user->contextid)) {
+                    $contextid = $this->user->contextid;
+                } else {
+                    $context = context_user::instance($this->user->id, IGNORE_MISSING);
+                    if (!$context) {
+                        // This must be an incorrectly deleted user, all other users have context.
+                        return $defaulturl;
+                    }
+                    $contextid = $context->id;
+                }
+                $path = '/';
+                if (clean_param($page->theme->name, PARAM_THEME) == $page->theme->name) {
+                    // We append the theme name to the file path if we have it so that
+                    // in the circumstance that the profile picture is not available
+                    // when the user actually requests it they still get the profile
+                    // picture for the correct theme.
+                    $path .= $page->theme->name.'/';
+                }
+                // Set the image URL to the URL for the uploaded file and return.
+                $url = moodle_url::make_pluginfile_url($contextid, 'user', 'icon', NULL, $path, $filename);
+                $url->param('rev', $this->user->picture);
+                return $url;
+            }
+            // Is the user a member of staff
+            $staff_status = "University Staff";
+            if ( !empty($this->user->status) && ($this->user->status == $staff_status) ) {
+                // If it is a staff memeber we return the default URL
+                return $defaulturl;
+            }
+
+            if ($this->user->picture == 0) {
+                // Normalise the size variable to acceptable bounds
+                if ($size < 1 || $size > 512) {
+                    $size = 35;
+                }
+                // Hash the users email address
+                //$md5 = md5(strtolower(trim($this->user->email)));
+
+                // Find the best default image URL we can (MDL-35669)
+                $absoluteimagepath = $page->theme->resolve_image_location('u/'.$filename, 'core');
+                if (strpos($absoluteimagepath, $CFG->dirroot) === 0) {
+                    $gravatardefault = $CFG->wwwroot . substr($absoluteimagepath, strlen($CFG->dirroot));
+                } else {
+                    $gravatardefault = $CFG->wwwroot . '/pix/u/' . $filename . '.png';
+                }
+
+                // Build a gravatar URL with what we know.                
+                $applicationId = "itsmoodle";
+                $applicationkey = "RtqXJkDsdmk2mO!zmF&QmkDkAb#PxwzJuX9%^9S0";
+                //$universityId = $this->user->idnumber;
+                if (!empty($this->user->idnumber)) $universityId = $this->user->idnumber;
+                else $universityId = "1473579"; // 4011418,1562611, 1473579, 1271126, 1562557, 1255783
+
+                // Hash the application key and user id
+                $hashstring = $applicationkey. $universityId;
+                $md5 = md5($hashstring);
+
+                $image_url = "https://photos-test.warwick.ac.uk/{$applicationId}/photo/{$md5}/{$universityId}";
+                return new moodle_url("$image_url", array('s' => $size, 'd' => $gravatardefault));
+            }
+            return $defaulturl;
+        }
+
+    }
+
+
