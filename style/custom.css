@@ -1,6 +1,7 @@
 /* Custom CSS
 -------------------------*/
 
+
 /* Globals
 -------------------------*/
 .mywhite{
@@ -172,8 +173,7 @@ a.signout_link2, a.signin_link2{
 	color:#fff;
 	position:absolute;
 	right:12px;
-/*	top:12px;*/
-	margin-top:12px
+	top:12px;
 }
 
 #wbar-log-outer a:hover{
@@ -244,21 +244,6 @@ div.course_category_tree h1,div.course_category_tree h2,div.course_category_tree
 	line-height:1.2;
 }
 
-/* WMG Category test
--------------------------*/
-#page-course-index-category.category-15  .generalbox.info {
-	padding:0px !important;
-	background-color:none !important;
-	font-size:1.0em !important;
-	background:none !important;
-	font-weight:normal;
-	color:#333;
-}
-
-
-#page-course-index-category.category-15  #page, #page-course-index-category.category-15  .container-fluid,#page-course-index-category.category-15  #wbar-inner,#page-course-index-category.category-15  #page-navbar,#page-course-index-category.category-15  #footer-inner,#page-course-index-category.category-15  #vbot-cont-container{
-	max-width:980px; 
-}
 
 
 /* Links
@@ -904,31 +889,40 @@ li.mytop4.open a.settings{
 		right:0px;
 		left:0px;
 		z-index:3;
+	/*	padding-bottom: 15px;*/
 		background: #fff;
+	/*	background-image: url([[pix:theme|wht1px_trans]]);
+		background-position:bottom;
+		background-repeat:repeat;*/
 		
 	}
-	.ie8 div#my-affix.affix{
-		position:static !important;
-	}
-	
 	
 	#affix-wrap{
 		min-height:100px;
 	}
-
+	
+	#my-affix.affix nav.navbar-inner .container-fluid {
+		/*padding: 11px 0px 10px 0px;*/
+	}
+	
+	
 	#my-affix.affix nav.navbar-inner{
-/*	-webkit-transition: all 500ms ease;
+	/*	padding: 0px 0px 0px 0px;*/
+	-webkit-transition: all 500ms ease;
 	-moz-transition: all 500ms ease;
 	-o-transition: all 500ms ease;
-	transition: all 500ms ease;*/
+	transition: all 500ms ease;
 	}
 
 	
 	#my-affix.affix nav.navbar-inner a.brand img#moologo{
-/*		-webkit-transition: all 300ms ease-in-out;
+		/*display:none;*/
+		/*max-width:90%;*/
+		-webkit-transition: all 300ms ease-in-out;
 		-moz-transition: all 300ms ease-in-out;
 		-o-transition: all 300ms ease-in-out;
-		transition: all 300ms ease-in-out;*/
+		transition: all 300ms ease-in-out;
+		/*margin-top:1px;*/
 	}
 	
 	
@@ -942,7 +936,12 @@ li.mytop4.open a.settings{
     width: 100%;
 }
 	
-
+	#my-affix.affix nav.navbar-inner li a {
+		/*color: #fff;
+		text-decoration: none;
+		text-shadow: none;*/
+	}
+	
 	#my-affix.affix nav.navbar-inner .nav-collapse.collapse {
 		margin-bottom: 0px !important;
 	}
@@ -1097,14 +1096,21 @@ nav.breadcrumb-button{
 
 #crumb-outer{
 	background-color:#f7f7f8;
+/*	border-bottom:1px solid #dde1e3;
+	border-bottom:2px solid #ededef;*/
+	overflow:hidden;
+	/*background: #f7f7f8 url([[pix:theme|squairy_light_my]]) repeat;*/
+	/*background: #f7f7f8;
+	background-image: linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -o-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -moz-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -webkit-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);
+	background-image: -ms-linear-gradient(bottom, #FAFAFA 0%, #ffffff 100%);	*/	
 	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
-	-ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
-	-o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
-	/*overflow:hidden;*/
-	width:100%;
-	display:inline-block;
+-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+-ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+-o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
 }
 
 .breadcrumb {
@@ -1181,9 +1187,9 @@ nav.breadcrumb-button{
 		 border-bottom:1px solid #dde1e3;
 	}
 	
-	/*#crumb-outer {
+	#crumb-outer {
 	border: 1px solid #dde1e3;
-	}	*/
+	}	
 	
 	.navbar-inner{
 		border:none !important;
@@ -1242,7 +1248,10 @@ nav.breadcrumb-button{
 /* Blocks
 -------------------------*/
 
-
+/*#block-region-side-pre, #block-region-side-post{
+	max-width:268px;
+}
+*/
 .block {
 	border:1px solid #dde1e3;
 	background:#f7f7f8;
@@ -1253,6 +1262,14 @@ nav.breadcrumb-button{
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	/*
+	background:#f7f7f8;
+	background-image: linear-gradient(bottom, #f7f7f8 0%, #fdfdfd 100%);
+	background-image: -o-linear-gradient(bottom, #f7f7f8 0%, #fdfdfd 100%);
+	background-image: -moz-linear-gradient(bottom, #f7f7f8 0%, #fdfdfd 100%);
+	background-image: -webkit-linear-gradient(bottom, #f7f7f8 0%, #fdfdfd 100%);
+	background-image: -ms-linear-gradient(bottom, #f7f7f8 0%, #fdfdfd 100%);*/
+	
 }
 
 .block .header h2 {
@@ -1263,10 +1280,6 @@ nav.breadcrumb-button{
 	line-height: 20px;
 	color: #545454;
 	letter-spacing:normal;
-}
-
-.block h3{
-	text-transform:none;
 }
 
 #page-site-index #block-region-side-pre{
@@ -1368,10 +1381,6 @@ nav.breadcrumb-button{
 	padding: 0 0;
 	font-family:"Open Sans", Helvetica, Arial, Verdana, sans-serif;
 	color:#545454;
-}
-
-#page-footer .footnote {
-	display:none;
 }
 
 #page-footer .fa{
@@ -1636,12 +1645,6 @@ margin: 0 0px;
 	padding: 0 0 0 0;
 }
 
-.activity.label.modtype_label img{
-	max-width:100%;
-	height: auto;
-}
-
-
 /* My Moodle
 -------------------------*/
 
@@ -1717,7 +1720,8 @@ width: auto;
 }
 
 .course-content ul.ctopics li.section .content .toggle a h3.sectionname, .course-content ul.ctopics li.section .content.sectionhidden h3.sectionname{
-	/*color:#545454;*/
+	/*color:#373a41;*/
+	color:#545454;
 	font-size:1.3em;
 	font-weight:600;
 }
@@ -1927,9 +1931,6 @@ div#gridshadebox_overlay {
 	z-index:4 !important;
 }
 
-img.new_activity{
-	display:none !important;
-}
 
 /*********grid plugin fixes form previous theme****************/
 
@@ -2161,8 +2162,6 @@ div.clearlooks2{
 
 .ie9 .navbar-fixed-top .navbar-inner{
 	position:static;
-	/*min-height:57px;*/
-	padding: 12px 5px 14px 0px;
 }
 
 .ie9 #top-wbar{
@@ -2405,6 +2404,9 @@ ul.nav.nav-tabs{
 	font-size:.9em;
 }
 
+/* Gradebook & Assignments
+-------------------------*/
+
 
 /* List Fixes
 -------------------------*/
@@ -2437,357 +2439,4 @@ margin-bottom:20px;
 .que.multichoiceset .answer .specificfeedback script[type="math/tex"] {
 	display:none;
 }
-
-/* Moodle Assigmnet View Amends
--------------------------*/	
-/******hide email and deprtment in assignment view + reduce padding******/
-#page-mod-assign-view td.email, #page-mod-assign-view th.email,  #page-mod-assign-view td.department,  #page-mod-assign-view th.department{
-	display:none;
-}
-
-#page-mod-assign-view th.header.c1, #page-mod-assign-view th.header.c2, #page-mod-assign-view th.header.c3, #page-mod-assign-view th.header.c7, #page-mod-assign-view th.header.c8, #page-mod-assign-view th.header.c9, #page-mod-assign-view th.header.c10, #page-mod-assign-view th.header.c11, #page-mod-assign-view th.header.c12, #page-mod-assign-view th.header.c13, #page-mod-assign-view th.header.c14, #page-mod-assign-view th.header.c15{
-	white-space:pre-line;
-}
-
-#page-mod-assign-view  td.cell.c1{
-	padding:0;
-}
-
-#page-mod-assign-view table.flexible td, #page-mod-assign-view  .generaltable td {
-	padding: 5px;
-}
-
-#page-mod-assign-view .gradingtable div.no-overflow{
-	overflow:visible;
-}
-
-/******this doesn't work on the test sytem*********/
-#page-mod-assign-view td.cell.c10 .ygtvitem table td, #page-mod-assign-view td.cell.c15 .ygtvitem table td{
-	max-width: 80px;
-	overflow: hidden;
-}
-
-div.submissionstatustable, div.submissionfull, div.submissionlinks, div.usersummary, div.feedback, div.gradingsummary {
-margin-bottom: 1em;
-}
-
-#mod_assign_grading_r0_c7 a{
-	background: #c7ecfb;
-	background:#fff;
-  	padding: 4px;
-  	border: 4px #b1e4f9 solid;
-}
-
-/* Gradebook Fixes
--------------------------*/	
-
-.gradeparent{
-	width:500%;
-}
-
-.path-grade-report-grader div.right_scroller tr, .path-grade-report-grader div.right_scroller td, .path-grade-report-grader div.right_scroller th{
-	width:70px;
-}
-
-.path-grade-report-grader .right_scroller {
-	overflow-x: auto;
-}
-
-
-.path-grade-report-grader .course-3732 .left_scroller, .path-grade-report-grader .course-3737 .left_scroller  {
-	float: left;
-	clear: none;
-	padding-top: 20px;
-	position: absolute;
-	overflow:auto;
-}
-
-.path-grade-report-grader .course-3732 .left_scroller th.useremail, .path-grade-report-grader .course-3737 .left_scroller th.useremail, .path-grade-report-grader .course-3732 .left_scroller th.userdepartment, .path-grade-report-grader .course-3737 .left_scroller th.userdepartment {
-	display:none;
-}
-
-.path-grade-report-grader .course-3732 .left_scroller th.user, .path-grade-report-grader .course-3737 .left_scroller th.user {
-	width:200px !important;
-	white-space:nowrap !important;
-}
-
-
-.path-grade-report-grader .course-3732 .right_scroller, .path-grade-report-grader .course-3737 .right_scroller {
-	overflow-x: auto;
-	margin-left: 350px;
-	position: relative;
-	left: 0px;
-	max-width:1080px;
-	text-overflow:ellipsis;
-}
-
-.path-grade-report-grader td.grade select{
-	margin-bottom: 0px;
-	height:20px;
-}
 	
-/*Fix for https://bugs.elab.warwick.ac.uk/browse/MOO-267
--------------------------*/	
-#page-grade-report-grader-index table#user-grades.generaltable span.gradevalue.hidden{
-	display: block;
-	visibility: visible;
-}
-
-div.addresourcedropdown option[value*="helixmedia"]{
-	display:none !important;	
-}
-	
-
-/*Remove email and dept columns in gradeboook 
--------------------------*/	
-
-.path-grade-report-grader .left_scroller th.useremail{/* ***removes email column in gradebook across the site****/
-	display:none;	
-}
-
-.path-grade-report-grader .left_scroller th.userdepartment {/* ***removes department column in gradebook across the site****/
-	display:none;	
-}
-
-/* MediaStream / Helix
--------------------------*/	
-
-iframe[id^=hmlvid] { /*http://www.css3.info/preview/attribute-selectors/  CSS3 only
-					http://www.smashingmagazine.com/2009/08/17/taming-advanced-css-selectors/
-*/
-	overflow:hidden !important;
-}
-
-
-/*********************hide helix axctivity in chooser**************/
-label[for=module_helixmedia]{
-	display:none !important;
-}
-
-.category-158 label[for=module_helixmedia]{
-	display:block !important;
-}
-
-/*********************hide helix submission type **************/
-label[for=id_assignsubmission_helixassign_enabled], input[name=assignsubmission_helixassign_enabled]{
-	display:none !important;
-}
-
-
-.category-158 label[for=id_assignsubmission_helixassign_enabled], .category-158 input[name=assignsubmission_helixassign_enabled]{
-	display:block !important;
-}
-
-/*********************Tiny MCE Helix button**************/
-
-span.mceIcon.mce_helixmedia img{ /* *****hide existing icon******/
-	display:none;
-}
-
-
-span.mceIcon.mce_helixmedia{
-	background:url([[pix:theme|mediastream_tinymce_icon]]);
-	background-position:center;
-	background-repeat:no-repeat;
-}
-
-/*********************hide helix TinyMCE button**************/
-span.mceIcon.mce_helixmedia, #id_summary_editor_helixmedia{
-	display:none !important;
-}
-
-.dir-rtl .moodleSkin .mceToolbar select, .moodleSkin .mceToolbar a.mceButton.mce_helixmedia{
-	display:none !important;
-}
-
-.category-158 span.mceIcon.mce_helixmedia, .category-158 #id_summary_editor_helixmedia{
-	display:block !important;
-}
-
-.category-158 .dir-rtl .moodleSkin .mceToolbar select, .category-158 .moodleSkin .mceToolbar a.mceButton.mce_helixmedia{
-	display:block !important;
-}
-
-/*********************assignment warning message**************/
-div.drop_shadow_lighter.lifted_bot.stream_msg{
-	display:none;
-}
-
-#page-mod-assign-view div.editsubmissionform div.drop_shadow_lighter.lifted_bot.stream_msg{
-	display:block !important;
-	padding: 10px;
-	font-size:14px;
-	line-height:1.3;
-	font-family:"Open Sans", Helvetica, Arial, Verdana, sans-serif;
-	max-width: 770px;
-	color:#FFF;
-	background-color: #339BB9;
-    background-repeat: repeat-x;
-	background: #5bc0de; /* Old browsers */
-	background: -moz-linear-gradient(top, #5bc0de 0%, #339bb9 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5bc0de), color-stop(100%,#339bb9)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #5bc0de 0%,#339bb9 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #5bc0de 0%,#339bb9 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #5bc0de 0%,#339bb9 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #5bc0de 0%,#339bb9 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5bc0de', endColorstr='#339bb9',GradientType=0 ); /* IE6-9 */
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-	border: 1px solid #2e8ba6;
-	border-radius: 5px;
-}
-
-#page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg i{
-	float:left;
-	position: relative;
-	top: 2px;
-}
-
-#page-mod-assign-view div.drop_shadow_lighter.lifted_bot.stream_msg span{
-	margin-left:25px;
-	display:block;
-	font-weight:600;
-}
-
-
-/* General
--------------------------*/	
-span#mmsg{
-	color:#933;
-}
-
-body.ie a img{/***removes borders on image links in IE****/
-	border:0 !important;
-}
-
-.list-m15{
-	margin-left:15px !important;
-}
-	
-.list-m15 li{
-	margin-bottom:7px !important;
-}
-
-
-/* Responsive image fixes
--------------------------*/	
-
-#region-main img{/***makes all imgaes in main course content area responsive  *****/
-	height: auto;
-	max-width: 100%;
-}
-
-#head_cont1 img, .drop_shadow_head.lifted_bot img{ /***images used ifor header template are responsive in TinyMCE *****/
-	height: auto;
-	max-width: 100%;
-}
-
-#page-mod-feedback-analysis img.feedback_bar_image{
-	height:10px;
-	margin-right:5px;
-}
-
-/* Links over multiple lines
--------------------------*/
-
-a{
-	word-wrap: break-word;
-}
-	
-	
-/* Warning: Needed for oldIE support, but words are broken up letter-by-letter - https://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/ */ 
-
-a.longlink{
- -ms-word-break: break-all;
-     word-break: break-all;
-
-     /* Non standard for webkit */
-    /* word-break: break-word;*/
-
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-    -ms-hyphens: auto;
-        hyphens: auto;
-	
-}
-
-/* Modfied Link On web pages
--------------------------*/	
-
-.modified{
-	background: #fafafa;
-	padding: 10px;
-	margin: 20px 0px 10px 0px;
-	text-transform: uppercase;
-	font-size: .8em;
-	color: #545454;
-	font-family: 'Open Sans',sans-serif;
-}
-
-/* Warning Messages
--------------------------*/
-
-
-.mdl_alert_amber {
-	color: #c09853;
-	padding: 8px 35px 8px 14px;
-	background-color: #fcf8e3;
-	border:1px solid #faebcc;
-}
-
-.mdl_alert_amber:before{
-    content: "\f071";
-    font-family: FontAwesome;
-	margin-right:4px;
-	font-size:1.4em;
-	position: relative;
-	top: 2px;
- }
- 
-
-.mdl_alert_red {
-	padding: 8px 35px 8px 14px;
-	color: #a94442;
-	background-color: #f2dede;
-	border:1px solid #ebccd1;
-}
-
-.mdl_alert_red:before {
-    content: "\f06a";
-    font-family: FontAwesome;
-	margin-right:4px;
-	font-size:1.4em;
-	position: relative;
-	top: 2px
- }
-
-.mdl_alert_green {
-	padding: 8px 35px 8px 14px;
-	color: #3c763d;
-	background-color: #dff0d8;
-	border:1px solid #d6e9c6;
-}
-
-.mdl_alert_green:before {
-    content: "\f058";
-    font-family: FontAwesome;
-	margin-right:4px;
-	font-size:1.4em;
-	position: relative;
-	top: 2px
- }
- 
- .mdl_alert_blue {
-	padding: 8px 35px 8px 14px;
-	color: #31708f;
-	background-color: #d9edf7;
-	border:1px solid #bce8f1;
-}
-
-.mdl_alert_blue:before {
-    content: "\f05a";
-    font-family: FontAwesome;
-	margin-right:4px;
-	font-size:1.4em;
-	position: relative;
-	top: 2px
- }
