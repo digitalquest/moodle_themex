@@ -640,6 +640,7 @@ Also including Page Curl CSS3.
 	background-image: -ms-linear-gradient(bottom, #fff 0%, #f7f7f8 100%);
 	padding:2px 7px;
 	/*margin-bottom:15px;*/
+	min-height: 12px;
 }
 
 #hbg-text-head h1,#hbg-text-head h2, #hbg-text-head h3{

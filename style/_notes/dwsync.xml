@@ -3,6 +3,6 @@
 <file name="custom.css" server="moodle-test.warwick.ac.uk//data/www/html/" local="130522330960235453" remote="130522331050000000" Dst="2" />
 <file name="custom.css" server="moodle-test.warwick.ac.uk//data/www/html/theme/" local="130416170725501832" remote="130416170770000000" Dst="-1" />
 <file name="custom.css" server="moodle-test.warwick.ac.uk//data/www/html/theme/warwickclean/" local="130416176593937488" remote="130416176640000000" Dst="-1" />
-<file name="font-awesome.min.css" server="moodle-test.warwick.ac.uk//data/www/html/" local="130447122960000000" remote="130457428110000000" Dst="-1" />
 <file name="font-awesome4.0.min.css" server="moodle-test.warwick.ac.uk//data/www/html/" local="130447115260000000" remote="130457428120000000" Dst="-1" />
+<file name="custom.css" server="w01.war3moodle.wf.ulcc.ac.uk/war3moodle_docroot_theme/" local="130822245965871422" remote="130822246070000000" Dst="2" />
 </dwsync>
