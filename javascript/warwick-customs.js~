@@ -59,6 +59,7 @@ function toggle_ellipses() {
 
 // ROLLOVER USER PROFILE BOX
 $('[data-toggle="popover"]').popover({
+	delay: 1000,
 	trigger: 'manual',
 	html: true,
 	placement: 'top',

@@ -37,12 +37,9 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $breadcrumbs = array();
         foreach ($items as $item) {
             $item->hideicon = true;
-            $a = $this->render($item);
-            if( strpos($a, "view.php" ) !== false  ) {
-              $breadcrumbs[] = "<b>" . $a . "</b>";
-            } else {
-             $breadcrumbs[] = $a;
-            }
+	    if ($item->type == navigation_node::TYPE_COURSE)
+		$item->title = "<span class='breadcrumb-course'>". $item->title. "</span>";
+            $breadcrumbs[] = $this->render($item);
         }
         // ADD ELLIPSES ...
         $new_breadcrumbs = array();
@@ -240,6 +237,9 @@ class theme_warwickclean_core_renderer extends core_renderer {
                 $class .= ' langmenu';
             }
 
+	    if ($menunode->type == navigation_node::TYPE_COURSE) $class .= ' breadcrumb-course';
+	    //$class .= ' breadcrumb-course';
+
             $content = html_writer::start_tag('li', array('class' => $class));
             // If the child has menus render it as a sub menu.
             $submenucount++;
@@ -263,7 +263,11 @@ class theme_warwickclean_core_renderer extends core_renderer {
             $content .= '</ul>';
         } else {
 
-            $content = '<li>';
+	    if ($menunode->type == navigation_node::TYPE_COURSE) 
+		$content = html_writer::start_tag('li', array('class' => 'breadcrumb-course'));
+	    else $content = '<li>';
+
+            //$content = '<li>';
             // The node doesn't have children so produce a final menuitem.
             if ($menunode->get_url() !== null) {
                 $url = $menunode->get_url();
@@ -482,30 +486,31 @@ class theme_warwickclean_core_renderer extends core_renderer {
         }
         // get the image html output fisrt
         $output = html_writer::empty_tag('img', $attributes);
-        // will wrap it in link if needed
-        if ($userpicture->link) {
-            if (empty($userpicture->courseid)) {
-                $courseid = $this->page->course->id;
-            } else {
-                $courseid = $userpicture->courseid;
-            }
-            if ($courseid == SITEID) {
-                $url = new moodle_url('/user/profile.php', array('id' => $user->id));
-            } else {
-                $url = new moodle_url('/user/view.php', array('id' => $user->id, 'course' => $courseid));
-            }
-            $attributes = array('href'=>$url);
-            if (!$userpicture->visibletoscreenreaders) {
-                $attributes['tabindex'] = '-1';
-                $attributes['aria-hidden'] = 'true';
-            }
-            if ($userpicture->popup) {
-                $id = html_writer::random_id('userpicture');
-                $attributes['id'] = $id;
-                $this->add_action_handler(new popup_action('click', $url), $id);
-            }
+        // then wrap it in link if needed
+        if (!$userpicture->link) {
+            //return $output; /******^..^^..^^..^^..^^..^******/
         }
-        /** POP OVER BOX **/
+        if (empty($userpicture->courseid)) {
+            $courseid = $this->page->course->id;
+        } else {
+            $courseid = $userpicture->courseid;
+        }
+        if ($courseid == SITEID) {
+            $url = new moodle_url('/user/profile.php', array('id' => $user->id));
+        } else {
+            $url = new moodle_url('/user/view.php', array('id' => $user->id, 'course' => $courseid));
+        }
+        $attributes = array('href'=>$url);
+        if (!$userpicture->visibletoscreenreaders) {
+            $attributes['tabindex'] = '-1';
+            $attributes['aria-hidden'] = 'true';
+        }
+        if ($userpicture->popup) {
+            $id = html_writer::random_id('userpicture');
+            $attributes['id'] = $id;
+            $this->add_action_handler(new popup_action('click', $url), $id);
+        }
+
         //Get url for larger picture size.
         $userpicture->size = true;// true, 1 and 100 are the same. New size will be 100x100
         $src = $userpicture->get_url($this->page, $this);
@@ -528,9 +533,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
 
         // Add popover attributes
         $attributes2 = array('tabindex'=>0, 'data-toggle' => 'popover', 'data-content'=>$dataContent, 'title'=>$title);
-        // CHECK IF IMAGE SHOULD BE AN HYPERLINK
-        if ($userpicture->link) $attributes = array_merge($attributes, $attributes2);
-        else $attributes = $attributes2;
+        $attributes = array_merge($attributes, $attributes2);
 
         // Render the entire thing and return
         $rendered_user_picture = html_writer::tag('a', $output, $attributes);

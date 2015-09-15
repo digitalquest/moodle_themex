@@ -1,7 +1,7 @@
 <?php
-
+ 
 class theme_warwickclean_core_renderer extends core_renderer {
-
+	
 /** @var custom_menu_item language The language menu if created */
     protected $language = null;
 
@@ -37,26 +37,14 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $breadcrumbs = array();
         foreach ($items as $item) {
             $item->hideicon = true;
-            $a = $this->render($item);
-            if( strpos($a, "view.php" ) !== false  ) {
-              $breadcrumbs[] = "<b>" . $a . "</b>";
-            } else {
-             $breadcrumbs[] = $a;
-            }
+            $breadcrumbs[] = $this->render($item);
         }
-        // ADD ELLIPSES ...
-        $new_breadcrumbs = array();
-        $counter = 0;
-        foreach ($breadcrumbs as $breadcrumb) { //add ellipses in second position
-            if ($counter == 1) $new_breadcrumbs[] = "<span id='ellipses'>...</span>";
-            $new_breadcrumbs[] =  $breadcrumb;
-            $counter++;
-        }
-        //
+        
         $divider = '<span class="divider">'.get_separator().'</span>';
-        $list_items = '<li>'.join(" $divider</li><li>", $new_breadcrumbs).'</li>';
+        $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
-        return $title . "<ul id=\"bc1\" class=\"breadcrumb\">$list_items</ul>";
+        return $title . "<ul id=\"bc1\" class=\"breadcrumb\"><span id=\"ellipses\">...</span>$list_items</ul>";
+        
     }
 
     /*
@@ -72,9 +60,9 @@ class theme_warwickclean_core_renderer extends core_renderer {
         }
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
-
+		
     }
-
+	
 
     /*
      * This renders the bootstrap top menu.
@@ -84,7 +72,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
     protected function render_custom_menu(custom_menu $menu) {
         global $CFG;
 		require_once($CFG->dirroot.'/course/lib.php');
-
+ 
 
         // TODO: eliminate this duplicated logic, it belongs in core, not
         // here. See MDL-39565.
@@ -112,8 +100,8 @@ class theme_warwickclean_core_renderer extends core_renderer {
             foreach ($langs as $langtype => $langname) {
                 $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
             }
-        }
-
+        }	
+		
 		   // Add a login or logout link
    //     if (isloggedin()) {
 //            $branchlabel = get_string('logout');
@@ -123,31 +111,31 @@ class theme_warwickclean_core_renderer extends core_renderer {
 //            $branchurl   = new moodle_url('/login/index.php');
 //        }
 //        $branch = $menu->add($branchlabel, $branchurl, $branchlabel, -1);
-//
-
-
+//		
+			
+		
  // Add My Courses to the menu form http://docs.moodle.org/dev/Adding_courses_and_categories_to_the_custom_menu
-
+ 
  if (isloggedin() && !isguestuser() && $mycourses = enrol_get_my_courses(NULL, 'visible DESC, fullname ASC')) {  //which does work
-
+ 
             $branchlabel = "My Moodle" ;
             $branchurl   = new moodle_url('/my');
             $branchtitle = $branchlabel;
-            $branchsort  = 1000 ; // lower numbers = higher priority e.g. move this item to the left on the Custom Menu
+            $branchsort  = 1000 ; // lower numbers = higher priority e.g. move this item to the left on the Custom Menu	
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
-
+ 
  			$branch->add('Overview',new moodle_url('/my'));
             foreach ($mycourses as $mycourse) {
                 $branch->add($mycourse->shortname, new moodle_url('/course/view.php', array('id' => $mycourse->id)), $mycourse->fullname);
             }
         }
-
+     
    // Add a custom link to top navigation
             $branchlabel = "Categories";
             $branchurl   = new moodle_url('/course');
 			$branchtitle = "categories";
 			$branchsort  = 2000;
-
+       
         $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 			$branch->add('All Categories',new moodle_url('/course'));
 			$branch->add('Arts',new moodle_url('/course/index.php?categoryid=3'));
@@ -157,13 +145,13 @@ class theme_warwickclean_core_renderer extends core_renderer {
 			$branch->add('Interdisciplinary/Cross-Faculty',new moodle_url('/course/index.php?categoryid=28'));
 			$branch->add('Services',new moodle_url('/course/index.php?categoryid=56'));
 			$branch->add('Sandbox',new moodle_url('/course/index.php?categoryid=51'));
-
+		
 	// Add a custom link to top navigation
             $branchlabel = "Help";
             $branchurl   = new moodle_url('/');
 			$branchtitle = "help";
 			$branchsort  = 3000;
-
+       
         $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 			$branch->add("Medical School Help Pages", new moodle_url('http://www2.warwick.ac.uk/fac/med/study/cpd/current/moodle'),"medschool_help_cat_nav");
 			//$branch->add("Physics Help Pages", new moodle_url('http://www2.warwick.ac.uk/fac/sci/physics/current/teach/module_pages/moodle'),"physics_help_cat_nav");
@@ -176,7 +164,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
             $branchurl   = new moodle_url('/');
 			$branchtitle = "links";
 			$branchsort  = 5000;
-
+       
        $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 	  		$branch->add( "Email", new moodle_url('http://go.warwick.ac.uk/mymail/'),"insite_link");
 			$branch->add( "Insite", new moodle_url('http://www2.warwick.ac.uk/insite/'),"insite_link");
@@ -190,7 +178,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
 //            $branchurl   = new moodle_url('/course/');
 //			$branchtitle = "settings";
 //			$branchsort  = 6000;
-//
+//       
 //       $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 // 			$branch->add('<i class="icon-user"></i>'.get_string('profile').' ',new moodle_url('/user/profile.php'),get_string('profile'));
 //			$branch->add('<i class="fa fa-user"></i>'." View Profile", new moodle_url('/user/profile.php/'),"view_profile_link");
@@ -198,18 +186,18 @@ class theme_warwickclean_core_renderer extends core_renderer {
 //			$branch->add('<i class="fa fa-comments"></i>'." View My Forum Posts", new moodle_url('/mod/forum/user.php/'),"forumposts_link");
 //			$branch->add('<i class="fa fa-envelope"></i>'." View My Messages", new moodle_url('/message/index.php'),"view_messages_link");
 //			$branch->add('<i class="fa fa-bullhorn"></i>'." Notification Settings", new moodle_url('/message/edit.php'),"notification_settings_link");;
-//			$branch->add('<i class="fa fa-sign-out"></i>'." Sign Out", new moodle_url('/login/logout.php'),"signout_link");
-//
-
+//			$branch->add('<i class="fa fa-sign-out"></i>'." Sign Out", new moodle_url('/login/logout.php'),"signout_link");  
+//								
+		
 	// Add a custom settings icon link to top navigation
          //   $branchlabel = '<i class="fa fa-arrows-h fa-lg"></i>';
 //            $branchurl   = new moodle_url('/course/');
 //			$branchtitle = "maximise";
 //			$branchsort  = 7000;
-//
-	  //$branch = $menu->add($branchlabel, $branchurl,$branchtitle, $branchsort);
+//       
+	  //$branch = $menu->add($branchlabel, $branchurl,$branchtitle, $branchsort);  
 		//$branch = $menu->add('<div id="icondiv">'.$branchlabel.'</div>', $branchurl, $branchtitle) ;
-
+			
 
         $content = '<ul class="nav">';
         foreach ($menu->get_children() as $item) {
@@ -218,7 +206,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
 
         return $content.'</ul>';
     }
-
+	
 
     /*
      * This code renders the custom menu items for the
@@ -226,7 +214,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
      */
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
-
+		
 
         if ($menunode->has_children()) {
 
@@ -239,7 +227,6 @@ class theme_warwickclean_core_renderer extends core_renderer {
             if ($menunode === $this->language) {
                 $class .= ' langmenu';
             }
-
             $content = html_writer::start_tag('li', array('class' => $class));
             // If the child has menus render it as a sub menu.
             $submenucount++;
@@ -262,7 +249,6 @@ class theme_warwickclean_core_renderer extends core_renderer {
             }
             $content .= '</ul>';
         } else {
-
             $content = '<li>';
             // The node doesn't have children so produce a final menuitem.
             if ($menunode->get_url() !== null) {
@@ -455,15 +441,15 @@ class theme_warwickclean_core_renderer extends core_renderer {
 
         global $CFG, $DB;
         $user = $userpicture->user;
-        //if ($userpicture->alttext) {
-         //   if (!empty($user->imagealt)) {
-         //       $alt = $user->imagealt;
-         //   } else {
-         //       $alt = get_string('pictureof', '', fullname($user));
-         //   }
-        //} else {
+        if ($userpicture->alttext) {
+            if (!empty($user->imagealt)) {
+                $alt = $user->imagealt;
+            } else {
+                $alt = get_string('pictureof', '', fullname($user));
+            }
+        } else {
             $alt = '';
-        //}
+        }
         if (empty($userpicture->size)) {
             $size = 35;
         } else if ($userpicture->size === true or $userpicture->size == 1) {
@@ -482,59 +468,74 @@ class theme_warwickclean_core_renderer extends core_renderer {
         }
         // get the image html output fisrt
         $output = html_writer::empty_tag('img', $attributes);
-        // will wrap it in link if needed
-        if ($userpicture->link) {
-            if (empty($userpicture->courseid)) {
-                $courseid = $this->page->course->id;
-            } else {
-                $courseid = $userpicture->courseid;
-            }
-            if ($courseid == SITEID) {
-                $url = new moodle_url('/user/profile.php', array('id' => $user->id));
-            } else {
-                $url = new moodle_url('/user/view.php', array('id' => $user->id, 'course' => $courseid));
-            }
-            $attributes = array('href'=>$url);
-            if (!$userpicture->visibletoscreenreaders) {
-                $attributes['tabindex'] = '-1';
-                $attributes['aria-hidden'] = 'true';
-            }
-            if ($userpicture->popup) {
-                $id = html_writer::random_id('userpicture');
-                $attributes['id'] = $id;
-                $this->add_action_handler(new popup_action('click', $url), $id);
-            }
+        // then wrap it in link if needed
+        if (!$userpicture->link) {
+            //return $output; /******^..^^..^^..^^..^^..^******/
         }
-        /** POP OVER BOX **/
-        //Get url for larger picture size.
-        $userpicture->size = true;// true, 1 and 100 are the same. New size will be 100x100
-        $src = $userpicture->get_url($this->page, $this);
-        // Build the popover content
+        if (empty($userpicture->courseid)) {
+            $courseid = $this->page->course->id;
+        } else {
+            $courseid = $userpicture->courseid;
+        }
+        if ($courseid == SITEID) {
+            $url = new moodle_url('/user/profile.php', array('id' => $user->id));
+        } else {
+            $url = new moodle_url('/user/view.php', array('id' => $user->id, 'course' => $courseid));
+        }
+        $attributes = array('href'=>$url);
+        if (!$userpicture->visibletoscreenreaders) {
+            $attributes['tabindex'] = '-1';
+            $attributes['aria-hidden'] = 'true';
+        }
+        if ($userpicture->popup) {
+            $id = html_writer::random_id('userpicture');
+            $attributes['id'] = $id;
+            $this->add_action_handler(new popup_action('click', $url), $id);
+        }
+        //return html_writer::tag('a', $output, $attributes);
+        $rendered_user_picture = html_writer::tag('a', $output, $attributes);
+        
+        // prepare the roll hover box
+        // prepare <a> tag attributes
+        $tabindex = "0";
+        $role = "button";
+        //$role = "";
+        $class = "btn btn-lg btn-default";
+        //$class = "";
+        $dataContainer = "#warmoo-pro-pop";
+        $dataToggle = "popover";
         $title = "Real Name: <span class='warmoo-pro-pop-stress'>$user->firstname $user->lastname</span>";
         $dataContent .= "<div class='warmoo-pro-pop-pic userpicture'>";
-        $dataContent .= "<img src='$src' alt='Picture of $user->firstname $user->lastname' title='Picture of $user->firstname $user->lastname' width='90' height='90'>";
+        //$dataContent .= "<img src='$src' alt='Picture of $user->firstname $user->lastname' title='Picture of $user->firstname $user->lastname' width='90' height='90'>";
         $dataContent .= "</div>";
-        $dataContent .= "<div><ul class='warmoo-pro-po-lister'>";
+        $dataContent .= "<div>";
+        $dataContent .= "<ul class='warmoo-pro-po-lister'>";
         $dataContent .= "<li>Preferred: <span class='warmoo-pro-pop-stress'>$user->firstname $user->lastname</span></li>";
-        $dataContent .= "<li>User ID: <span class='warmoo-pro-pop-stress'>$user->idnumber</span></li></ul>";
+        $dataContent .= "<li>User ID: <span class='warmoo-pro-pop-stress'>$user->idnumber</span></li>";
+        $dataContent .= "</ul>";
         $dataContent .= "<div class='btn-group'><button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
-        $dataContent .= "<i class='fa fa-user'></i> More Info";
-        $dataContent .= "<span class='caret'></span></button>";
-        $dataContent .= "<ul class='unsigned dropdown-menu'><li><a href='$url'>";
-        $dataContent .= "<i class='fa fa-angle-double-right'></i> Moodle Profile</a></li>";
-        $dataContent .= "<li><a target='_blank' href='https://tabula.warwick.ac.uk/profiles/view/" . $user->idnumber . "'>";
-        $dataContent .= "<i class='fa fa-angle-double-right'></i> Tabula Profile";
-        $dataContent .= "</a></li></ul></div>";
-
-        // Add popover attributes
-        $attributes2 = array('tabindex'=>0, 'data-toggle' => 'popover', 'data-content'=>$dataContent, 'title'=>$title);
-        // CHECK IF IMAGE SHOULD BE AN HYPERLINK
-        if ($userpicture->link) $attributes = array_merge($attributes, $attributes2);
-        else $attributes = $attributes2;
-
-        // Render the entire thing and return
-        $rendered_user_picture = html_writer::tag('a', $output, $attributes);
-        return $rendered_user_picture;
+        $dataContent .= "<i class='fa fa-user'></i>"; 
+        $dataContent .= "More Info"; 
+        $dataContent .= "<span class='caret'></span>";
+        $dataContent .= "</button>";
+        $dataContent .= "<ul class='dropdown-menu'>";
+        $dataContent .= "<li>";
+        $dataContent .= "<a href='$url'>";
+        $dataContent .= "<i class='fa fa-angle-double-right'></i>"; 
+        $dataContent .= "Moodle Profile";
+        $dataContent .= "</a></li>";
+        $dataContent .= "<li><a target='_blank' href='https://tabula.warwick.ac.uk/profiles/view/$user->idnumber'>";
+        $dataContent .= "<i class='fa fa-angle-double-right'></i>"; 
+        $dataContent .= "Tabula Profile";
+        $dataContent .= "</a></li>";
+        $dataContent .= "</ul></div>";
+        // write out <a> tag
+        $attributes = array('tabindex'=>$tabindex, 'role'=>$role, 'class'=>$class, 'data-container'=>$dataContainer, 'data-toggle'=>$dataToggle, 'title'=>$title, 'data-content'=>$dataContent);
+        $popover_a = html_writer::tag('a', $rendered_user_picture, $attributes);
+        // wrap in the pop over <div> tag
+        $attributes = array('id'=>"warmoo-pro-pop");
+        return html_writer::tag('div', $popover_a, $attributes);
     }
 
 }
+
