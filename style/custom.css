@@ -5494,7 +5494,7 @@ label[for=id_assignsubmission_helixassign_enabled], input[name=assignsubmission_
 
 /*********************Tiny MCE Helix button**************/
 
-span.mceIcon.mce_helixmedia img{ /* *****hide existing icon******/
+/*span.mceIcon.mce_helixmedia img{ 
 	display:none;
 }
 
@@ -5504,6 +5504,21 @@ span.mceIcon.mce_helixmedia{
 	background-position:center;
 	background-repeat:no-repeat;
 }
+*/
+/*********************eStream MCE button**************/
+
+span.mceIcon.mce_planetestream img{ 
+	display:none;
+}
+
+
+span.mceIcon.mce_planetestream{
+	background:url([[pix:theme|mediastream_tinymce_icon]]);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+
 
 /*********************hide helix TinyMCE button**************/
 span.mceIcon.mce_helixmedia, #id_summary_editor_helixmedia{
