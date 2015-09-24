@@ -5724,7 +5724,7 @@ a.longlink{
 /* Condtional Acces Display fixes
 -------------------------*/
 
-a.conditionalhidden:link{
+/*a.conditionalhidden:link{
 	color:#1c5793;
 	text-decoration: none;
 }
@@ -5738,7 +5738,7 @@ a.conditionalhidden:hover, a.conditionalhidden:focus {
 a.dimmed.conditionalhidden{
 	color:grey !important;
 	text-decoration: none;
-}
+}*/
 
 /* General
 -------------------------*/
@@ -5746,4 +5746,11 @@ a.dimmed.conditionalhidden{
 /*Fix for hidden question name problem in quiz*/
 #page-mod-quiz-edit ul.slots li.activity div.activityinstance .questionname {
     margin-left: 75px;
+}
+
+/*
+* marking guide - remove comment boxes for category chemistry (id=74)
+*/
+body.category-74 .gradingform_guide .markingguideremark {
+  display: none;
 }
