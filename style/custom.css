@@ -5739,3 +5739,11 @@ a.dimmed.conditionalhidden{
 	color:grey !important;
 	text-decoration: none;
 }
+
+/* General
+-------------------------*/
+
+/*Fix for hidden question name problem in quiz*/
+#page-mod-quiz-edit ul.slots li.activity div.activityinstance .questionname {
+    margin-left: 75px;
+}
