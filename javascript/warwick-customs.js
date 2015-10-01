@@ -25,5 +25,47 @@ $(document).ready(function()
 		$("#id_sendstudentnotifications").show() //show 'Notify student'
 		$("label[for='id_sendstudentnotifications']").show(); // Show the label
 	}
+
+function toggle_ellipses() {
+	$('#bc1 .breadcrumb-course').show(); // always show course on the breadcrumbs trail
+	//
+	var ellipses1 = $("#ellipses");
+	// var hiddencount = $("#bc1 li:hidden").length;
+	var hiddencount = $('#bc1 li').not('li:nth-child(2)').filter(function() {
+		var element = $(this);
+		if(element.css('display') == 'none') {
+			return true;
+		}
+		return false;
+	}).length;
+
+	if (hiddencount > 0) {
+		//	if ($("#bc1 li:hidden").length > 0) {
+		ellipses1.parent().css('display', 'inline');
+		//console.log("hidden count: " + hiddencount + " => show")
+	} else {
+		ellipses1.parent().hide();
+		//	console.log("hidden count: " + hiddencount + " => hide")
+	}
+}
+
+
+// ROLLOVER USER PROFILE BOX
+$('[data-toggle="popover"]').popover({
+	trigger: 'manual',
+	html: true,
+	placement: 'top',
+	template: '<div class="popover" onmouseover="$(this).mouseleave(function() {$(this).hide(); });"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+}).mouseenter(function(e) {
+	$(this).popover('show');
+}).on('mouseleave', function(e){
+	var _this = this;
+	setTimeout(function(){
+		if(!$('.popover:hover').length){
+			$(_this).popover("hide");
+		}
+	},100)
+});
+// END 
 	
 });
