@@ -44,17 +44,8 @@ class theme_warwickclean_core_renderer extends core_renderer {
              $breadcrumbs[] = $a;
             }
         }
-        // ADD ELLIPSES ...
-        $new_breadcrumbs = array();
-        $counter = 0;
-        foreach ($breadcrumbs as $breadcrumb) { //add ellipses in second position
-            if ($counter == 1) $new_breadcrumbs[] = "<span id='ellipses'>...</span>";
-            $new_breadcrumbs[] =  $breadcrumb;
-            $counter++;
-        }
-        //
         $divider = '<span class="divider">'.get_separator().'</span>';
-        $list_items = '<li>'.join(" $divider</li><li>", $new_breadcrumbs).'</li>';
+        $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
         return $title . "<ul id=\"bc1\" class=\"breadcrumb\">$list_items</ul>";
     }
@@ -464,6 +455,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
         //} else {
             $alt = '';
         //}
+
         if (empty($userpicture->size)) {
             $size = 35;
         } else if ($userpicture->size === true or $userpicture->size == 1) {
