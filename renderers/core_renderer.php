@@ -37,12 +37,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $breadcrumbs = array();
         foreach ($items as $item) {
             $item->hideicon = true;
-            $a = $this->render($item);
-            if( strpos($a, "view.php" ) !== false  ) {
-              $breadcrumbs[] = "<b>" . $a . "</b>";
-            } else {
-             $breadcrumbs[] = $a;
-            }
+            $breadcrumbs[] = $this->render($item);
         }
         $divider = '<span class="divider">'.get_separator().'</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
