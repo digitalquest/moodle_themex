@@ -464,6 +464,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
         //} else {
             $alt = '';
         //}
+
         if (empty($userpicture->size)) {
             $size = 35;
         } else if ($userpicture->size === true or $userpicture->size == 1) {
