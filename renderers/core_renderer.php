@@ -37,6 +37,17 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $breadcrumbs = array();
         foreach ($items as $item) {
             $item->hideicon = true;
+            /* 
+            * Trying to replace the 'My home' breadcrumb
+            * not very elegant; another solution may be considered later
+            */
+            $ismyhome = strcasecmp( $item->text , "MY HOME" ) == 0;
+            if ($ismyhome) {
+                $breadcrumbs[] = '<a href="/" id="moo-home-button">&nbsp;<i class="fa fa-home fa-lg"></i></a>';
+                continue; // go to next element
+            }
+            /*
+            */
             $breadcrumbs[] = $this->render($item);
         }
         $divider = '<span class="divider">'.get_separator().'</span>';
