@@ -70,6 +70,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
     protected function render_custom_menu(custom_menu $menu) {
         global $CFG;
 		require_once($CFG->dirroot.'/course/lib.php');
+ 
 
         // TODO: eliminate this duplicated logic, it belongs in core, not
         // here. See MDL-39565.
@@ -97,10 +98,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
             foreach ($langs as $langtype => $langname) {
                 $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
             }
-        }
-		
-		
-		
+        }	
 		
 		   // Add a login or logout link
    //     if (isloggedin()) {
@@ -114,84 +112,89 @@ class theme_warwickclean_core_renderer extends core_renderer {
 //		
 			
 		
-				
-		// Add My Courses to the menu
-// if (isloggedin() && !isguestuser() && $mycourses = enrol_get_my_courses(NULL, 'visible DESC, fullname ASC')) { 
-// $mycoursesmenu = $menu->add(get_string('mycourses'), new moodle_url('#'), get_string('mycourses'), 8000);// lower numbers = higher priority e.g. move this item to the left on the Custom Menu
-// foreach ($mycourses as $mycourse) {
-// $mycoursesmenu->add($mycourse->shortname, new moodle_url('/course/view.php', array('id' => $mycourse->id)), $mycourse->fullname);
-// }
-// }
- 
  // Add My Courses to the menu form http://docs.moodle.org/dev/Adding_courses_and_categories_to_the_custom_menu
  
  if (isloggedin() && !isguestuser() && $mycourses = enrol_get_my_courses(NULL, 'visible DESC, fullname ASC')) {  //which does work
  
-            $branchlabel = get_string('mycourses') ;
-            $branchurl   = new moodle_url('/course/index.php');
+            $branchlabel = "My Moodle" ;
+            $branchurl   = new moodle_url('/my');
             $branchtitle = $branchlabel;
-            $branchsort  = 8000 ; // lower numbers = higher priority e.g. move this item to the left on the Custom Menu	
+            $branchsort  = 1000 ; // lower numbers = higher priority e.g. move this item to the left on the Custom Menu	
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
  
+ 			$branch->add('Overview',new moodle_url('/my'));
             foreach ($mycourses as $mycourse) {
                 $branch->add($mycourse->shortname, new moodle_url('/course/view.php', array('id' => $mycourse->id)), $mycourse->fullname);
             }
         }
      
- 
- // Add a custom link to top navigation
-            $branchlabel = "Navigation";
-            $branchurl   = new moodle_url('/courses.php');
-       
-         $branch = $menu->add($branchlabel, $branchurl);
- 			$branch->add('<i class="icon-user"></i>'.get_string('profile').' ',new moodle_url('/user/profile.php'),get_string('profile'));
- 
- 
    // Add a custom link to top navigation
             $branchlabel = "Categories";
-            $branchurl   = new moodle_url('/courses');
+            $branchurl   = new moodle_url('/course');
+			$branchtitle = "categories";
+			$branchsort  = 2000;
        
-        $branch = $menu->add($branchlabel, $branchurl);
- 
-
- 
-
-   // Add a custom link to top navigation
-            $branchlabel = "Links";
-            $branchurl   = new moodle_url('/courses.php');
-       
-        $branch = $menu->add($branchlabel, $branchurl);
-		
+        $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+			$branch->add('All Categories',new moodle_url('/course'));
+			$branch->add('Arts',new moodle_url('/course/index.php?categoryid=3'));
+			$branch->add('Medicine',new moodle_url('/course/index.php?categoryid=31'));
+			$branch->add('Science',new moodle_url('/course/index.php?categoryid=50'));
+			$branch->add('Social Sciences',new moodle_url('/course/index.php?categoryid=60'));
+			$branch->add('Interdisciplinary/Cross-Faculty',new moodle_url('/course/index.php?categoryid=28'));
+			$branch->add('Services',new moodle_url('/course/index.php?categoryid=56'));
+			$branch->add('Sandbox',new moodle_url('/course/index.php?categoryid=51'));
 		
 	// Add a custom link to top navigation
             $branchlabel = "Help";
-            $branchurl   = new moodle_url('/course/');
+            $branchurl   = new moodle_url('/');
+			$branchtitle = "help";
+			$branchsort  = 3000;
        
-        $branch = $menu->add($branchlabel, $branchurl);
-
+        $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+			$branch->add("Medical School Help Pages", new moodle_url('http://www2.warwick.ac.uk/fac/med/study/cpd/current/moodle'),"medschool_help_cat_nav");
+			//$branch->add("Physics Help Pages", new moodle_url('http://www2.warwick.ac.uk/fac/sci/physics/current/teach/module_pages/moodle'),"physics_help_cat_nav");
+			$branch->add("Life Sciences Help Pages", new moodle_url('http://www2.warwick.ac.uk/fac/sci/lifesci/intranet/staffpg/moodle'),"life_sciences_help_cat_nav");
+			$branch->add("Moodle Support Pages", new moodle_url('http://www2.warwick.ac.uk/services/its/servicessupport/academictechnology/our-services/moodle/support-for-moodle/helpcontacts/'),"moodle_help_nav");
 
 	// Add a custom link to top navigation
-            $branchlabel = '<i class="fa fa-cog fa-lg"></i>';
-            $branchurl   = new moodle_url('/course/');
-			//$branchtitle = get_string('mydashboard', 'theme_essential');
-            //$branchsort  = 10000;
+            //$branchlabel = '<i class="fa fa-link fa-lg"></i>';
+			$branchlabel = "Links";
+            $branchurl   = new moodle_url('/');
+			$branchtitle = "links";
+			$branchsort  = 5000;
        
-       $branch = $menu->add($branchlabel, $branchurl);
- 			$branch->add('<i class="icon-user"></i>'.get_string('profile').' ',new moodle_url('/user/profile.php'),get_string('profile'));
- 			$branch->add('<i class="icon-calendar"></i>'.get_string('pluginname', 'block_calendar_month').' ',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
- 			$branch->add('<i class="icon-envelope"></i>'.get_string('pluginname', 'block_messages').' ',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
- 			$branch->add('<i class="icon-certificate"></i>'.get_string('badges').' ',new moodle_url('/badges/mybadges.php'),get_string('badges'));
- 			$branch->add('<i class="icon-file"></i>'.get_string('privatefiles', 'block_private_files').' ',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
- 			$branch->add('<i class="icon-signout"></i>'.get_string('logout').' ',new moodle_url('/login/logout.php'),get_string('logout'));    
-        
-		
-		
+       $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+	  		$branch->add( "Email", new moodle_url('http://go.warwick.ac.uk/mymail/'),"insite_link");
+			$branch->add( "Insite", new moodle_url('http://www2.warwick.ac.uk/insite/'),"insite_link");
+			$branch->add( "My Portfolio", new moodle_url('http://mahara.warwick.ac.uk/'),"mahara_link");
+			//$branch->add( "Moodle X", new moodle_url('http://moodlex.warwick.ac.uk/'),"moodle2_link");
+			$branch->add( "Start.Warwick", new moodle_url('/'),"start_warwick_link");
+			$branch->add( "Tabula", new moodle_url('https://tabula.warwick.ac.uk/'),"tabula_link");
+
 	// Add a custom link to top navigation
-            $branchlabel = '<i class="fa fa-arrows-h fa-lg"></i>';
-            $branchurl   = new moodle_url('/course/');
-			$branchtitle = "Hide sidebars";
-       
-        $branch = $menu->add($branchlabel, $branchurl, $branchtitle);
+         //   $branchlabel = '<i class="fa fa-cog fa-lg"></i>';
+//            $branchurl   = new moodle_url('/course/');
+//			$branchtitle = "settings";
+//			$branchsort  = 6000;
+//       
+//       $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+// 			$branch->add('<i class="icon-user"></i>'.get_string('profile').' ',new moodle_url('/user/profile.php'),get_string('profile'));
+//			$branch->add('<i class="fa fa-user"></i>'." View Profile", new moodle_url('/user/profile.php/'),"view_profile_link");
+//			$branch->add('<i class="fa fa-pencil-square-o"></i>'." Edit Profile", new moodle_url('/user/edit.php'),"edit_profile_link");
+//			$branch->add('<i class="fa fa-comments"></i>'." View My Forum Posts", new moodle_url('/mod/forum/user.php/'),"forumposts_link");
+//			$branch->add('<i class="fa fa-envelope"></i>'." View My Messages", new moodle_url('/message/index.php'),"view_messages_link");
+//			$branch->add('<i class="fa fa-bullhorn"></i>'." Notification Settings", new moodle_url('/message/edit.php'),"notification_settings_link");;
+//			$branch->add('<i class="fa fa-sign-out"></i>'." Sign Out", new moodle_url('/login/logout.php'),"signout_link");  
+//								
+		
+	// Add a custom settings icon link to top navigation
+         //   $branchlabel = '<i class="fa fa-arrows-h fa-lg"></i>';
+//            $branchurl   = new moodle_url('/course/');
+//			$branchtitle = "maximise";
+//			$branchsort  = 7000;
+//       
+	  //$branch = $menu->add($branchlabel, $branchurl,$branchtitle, $branchsort);  
+		//$branch = $menu->add('<div id="icondiv">'.$branchlabel.'</div>', $branchurl, $branchtitle) ;
 			
 
         $content = '<ul class="nav">';
@@ -202,8 +205,6 @@ class theme_warwickclean_core_renderer extends core_renderer {
         return $content.'</ul>';
     }
 	
-	
-	
 
     /*
      * This code renders the custom menu items for the
@@ -211,11 +212,12 @@ class theme_warwickclean_core_renderer extends core_renderer {
      */
     protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
+		
 
         if ($menunode->has_children()) {
 
             if ($level == 1) {
-                $class = 'dropdown';
+                $class = 'dropdown '."mytop".$submenucount;  //************added by Richard to give custom class to to top level list items************
             } else {
                 $class = 'dropdown-submenu';
             }
@@ -228,16 +230,18 @@ class theme_warwickclean_core_renderer extends core_renderer {
             $submenucount++;
             if ($menunode->get_url() !== null) {
                 $url = $menunode->get_url();
+				$richID = $menunode->get_title(); //************added by Richard to give custom Classes to menu itmes based on the title************
             } else {
                 $url = '#cm_submenu_'.$submenucount;
             }
-            $content .= html_writer::start_tag('a', array('href'=>$url, 'class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'title'=>$menunode->get_title()));
+            $content .= html_writer::start_tag('a', array('href'=>$url,'class'=>'dropdown-toggle','class'=>$richID, 'data-toggle'=>'dropdown', /*'title'=>$menunode->get_title()*/));
             $content .= $menunode->get_text();
             if ($level == 1) {
                 $content .= '<b class="caret"></b>';
             }
             $content .= '</a>';
-            $content .= '<ul class="dropdown-menu">';
+           // $content .= '<ul class="dropdown-menu">';
+			$content .= "<ul class= 'dropdown-menu mysub$submenucount'>";  //************added by Richard to give custom class to sub menus based on menu count************
             foreach ($menunode->get_children() as $menunode) {
                 $content .= $this->render_custom_menu_item($menunode, 0);
             }
@@ -247,10 +251,11 @@ class theme_warwickclean_core_renderer extends core_renderer {
             // The node doesn't have children so produce a final menuitem.
             if ($menunode->get_url() !== null) {
                 $url = $menunode->get_url();
+				$richID = $menunode->get_title(); //************added by Richard to give custom Classes to menu items based on the title************
             } else {
                 $url = '#';
             }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title'=>$menunode->get_title()));
+            $content .= html_writer::link($url, $menunode->get_text(), array('class'=>$richID, /*'title'=>$menunode->get_title()*/));
         }
         return $content;
     }
@@ -414,6 +419,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
 
         return $loggedinas;
     }
+
 
 }
 

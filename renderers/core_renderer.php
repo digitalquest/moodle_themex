@@ -37,24 +37,21 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $breadcrumbs = array();
         foreach ($items as $item) {
             $item->hideicon = true;
-            $a = $this->render($item);
-            if( strpos($a, "view.php" ) !== false  ) {
-              $breadcrumbs[] = "<b>" . $a . "</b>";
-            } else {
-             $breadcrumbs[] = $a;
+            /* 
+            * Trying to replace the 'My home' breadcrumb
+            * not very elegant; another solution may be considered later
+            */
+            $ismyhome = strcasecmp( $item->text , "MY HOME" ) == 0;
+            if ($ismyhome) {
+                $breadcrumbs[] = '<a href="/" id="moo-home-button">&nbsp;<i class="fa fa-home fa-lg"></i></a>';
+                continue; // go to next element
             }
+            /*
+            */
+            $breadcrumbs[] = $this->render($item);
         }
-        // ADD ELLIPSES ...
-        $new_breadcrumbs = array();
-        $counter = 0;
-        foreach ($breadcrumbs as $breadcrumb) { //add ellipses in second position
-            if ($counter == 1) $new_breadcrumbs[] = "<span id='ellipses'>...</span>";
-            $new_breadcrumbs[] =  $breadcrumb;
-            $counter++;
-        }
-        //
         $divider = '<span class="divider">'.get_separator().'</span>';
-        $list_items = '<li>'.join(" $divider</li><li>", $new_breadcrumbs).'</li>';
+        $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
         return $title . "<ul id=\"bc1\" class=\"breadcrumb\">$list_items</ul>";
     }
@@ -464,6 +461,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
         //} else {
             $alt = '';
         //}
+
         if (empty($userpicture->size)) {
             $size = 35;
         } else if ($userpicture->size === true or $userpicture->size == 1) {
@@ -510,21 +508,16 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $userpicture->size = true;// true, 1 and 100 are the same. New size will be 100x100
         $src = $userpicture->get_url($this->page, $this);
         // Build the popover content
-        $title = "Real Name: <span class='warmoo-pro-pop-stress'>$user->firstname $user->lastname</span>";
+        $title = "<span class='warmoo-pro-pop-stress-main'>$user->firstname $user->lastname</span>";
         $dataContent .= "<div class='warmoo-pro-pop-pic userpicture'>";
         $dataContent .= "<img src='$src' alt='Picture of $user->firstname $user->lastname' title='Picture of $user->firstname $user->lastname' width='90' height='90'>";
         $dataContent .= "</div>";
         $dataContent .= "<div><ul class='warmoo-pro-po-lister'>";
-        $dataContent .= "<li>Preferred: <span class='warmoo-pro-pop-stress'>$user->firstname $user->lastname</span></li>";
-        $dataContent .= "<li>User ID: <span class='warmoo-pro-pop-stress'>$user->idnumber</span></li></ul>";
-        $dataContent .= "<div class='btn-group'><button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
-        $dataContent .= "<i class='fa fa-user'></i> More Info";
-        $dataContent .= "<span class='caret'></span></button>";
-        $dataContent .= "<ul class='unsigned dropdown-menu'><li><a href='$url'>";
-        $dataContent .= "<i class='fa fa-angle-double-right'></i> Moodle Profile</a></li>";
-        $dataContent .= "<li><a target='_blank' href='https://tabula.warwick.ac.uk/profiles/view/" . $user->idnumber . "'>";
-        $dataContent .= "<i class='fa fa-angle-double-right'></i> Tabula Profile";
-        $dataContent .= "</a></li></ul></div>";
+        $dataContent .= "<li><span class='warmoo-pro-pop-label'>Preferred Name: </span><span class='warmoo-pro-pop-stress'>$user->firstname $user->lastname</span></li>";
+        $dataContent .= "<li><span class='warmoo-pro-pop-label'>User ID: </span><span class='warmoo-pro-pop-stress'>$user->idnumber</span></li>";
+        $dataContent .= "<li><a  class='btn btn-moo-blue tab-prof-but' href='https://tabula.warwick.ac.uk/profiles/view/" . $user->idnumber . "' target='_blank' role='button'>";
+        $dataContent .= "<i class='fa fa-external-link-square'></i> Tabula Profile</a></li>";
+        $dataContent .= "</ul>";
 
         // Add popover attributes
         $attributes2 = array('tabindex'=>0, 'data-toggle' => 'popover', 'data-content'=>$dataContent, 'title'=>$title);
