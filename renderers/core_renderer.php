@@ -513,7 +513,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $ID = $user->id;
         $user = $DB->get_record('user', array('id'=>"$ID"));
         $universityId = $user->idnumber;
-        if (strpos($user->phone2,'staff') !== false) { // It is a member of staff;
+        if (strpos(strtolower($user->phone2),'staff') !== false) { // It is a member of staff;
             // Remove department code if any
             if (preg_match('/([a-zA-Z]{2}\d+)/', $universityId, $matches)) {
                 $universityId = substr($universityId,2);
