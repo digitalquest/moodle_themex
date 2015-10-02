@@ -53,7 +53,9 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $divider = '<span class="divider">'.get_separator().'</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
         $title = '<span class="accesshide">'.get_string('pagepath').'</span>';
-        return $title . "<ul id=\"bc1\" class=\"breadcrumb\">$list_items</ul>";
+        /* next line changed in order to disable responsive bradcrumbs */
+        //return $title . "<ul id=\"bc1\" class=\"breadcrumb\">$list_items</ul>";
+        return $title . "<ul class=\"breadcrumb\">$list_items</ul>";
     }
 
     /*
