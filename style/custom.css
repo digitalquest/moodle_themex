@@ -2440,49 +2440,6 @@ margin-bottom:20px;
 	display:none;
 }
 
-/* Responsive breadcrumbs */
-
-.breadcrumb > li {
-    /* With less: .text-overflow(); */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.breadcrumb > *:nth-child(n+2) {
-  display:none;
-}
-
-/* === For phones =================================== */
-@media (max-width: 767px) {
-    .breadcrumb  > *:nth-last-child(-n+2) {
-        display:inline;
-    }
-    .breadcrumb  > * {
-        max-width: 60px;
-    }
-}
-
-/* === For tablets ================================== */
-@media (min-width: 768px) and (max-width:991px) {
-    .breadcrumb  > *:nth-last-child(-n+4) {
-        display:inline;
-    }
-    .breadcrumb  > * {
-        max-width: 100px;
-    }
-}
-
-/* === For desktops ================================== */
-@media (min-width: 992px) {
-    .breadcrumb  > *:nth-last-child(-n+6) {
-        display:inline;
-    }
-    .breadcrumb  > * {
-        max-width: 170px;
-    }
-}
-
 /* Rollover user profile box
 -------------------------*/
 
