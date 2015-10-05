@@ -192,7 +192,7 @@ $(document).ready(function(){
         <div class="span4 frontbox">
         	<h2><span class="fa-stack "><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-refresh fa-stack-1x fa-inverse"></i></span>Moodle 2.8 Features</h2>
             <p>We are currently running version 2.8 of Moodle which brings a host of improvements including enhanced forums, improved assignment and quiz options. Follow the link below to find out more about the new features and improvements included in Moodle 2.8</p>
-  <p id="newbut"><a class="btn btn-default" href="http://docs.moodle.org/26/en/New_features" target="_blank">What's New  <i class="fa fa-arrow-right greyawes"></i></a></p>
+  <p id="newbut"><a class="btn btn-default" href="http://www2.warwick.ac.uk/services/its/servicessupport/academictechnology/our-services/moodle/support-for-moodle/news/?newsItem=094d43454dafff18014dc34795f32272" target="_blank">What's New  <i class="fa fa-arrow-right greyawes"></i></a></p>
 <!-- <p><a class="btn btn-moo-blue  pad-but" href="#"><i class="fa fa-chevron-right"></i> What's New</a></p>-->
         </div>
         
