@@ -166,9 +166,9 @@ class theme_warwickclean_core_renderer extends core_renderer {
        $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
 	  		$branch->add( "Email", new moodle_url('http://go.warwick.ac.uk/mymail/'),"insite_link");
 			$branch->add( "Insite", new moodle_url('http://www2.warwick.ac.uk/insite/'),"insite_link");
-			$branch->add( "My Portfolio", new moodle_url('http://mahara.warwick.ac.uk/'),"mahara_link");
+			$branch->add( "My Portfolio", new moodle_url('http://myportfolio.warwick.ac.uk/'),"mahara_link");
 			//$branch->add( "Moodle X", new moodle_url('http://moodlex.warwick.ac.uk/'),"moodle2_link");
-			$branch->add( "Start.Warwick", new moodle_url('/'),"start_warwick_link");
+			$branch->add( "Start.Warwick", new moodle_url('https://start.warwick.ac.uk/'),"start_warwick_link");
 			$branch->add( "Tabula", new moodle_url('https://tabula.warwick.ac.uk/'),"tabula_link");
 
 	// Add a custom link to top navigation
