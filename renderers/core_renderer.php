@@ -499,7 +499,6 @@ class theme_warwickclean_core_renderer extends core_renderer {
         }
 
         // Build the popover content
-        /*
         $title = "<span class='warmoo-pro-pop-stress-main'>$user->firstname $user->lastname</span>";
         $dataContent .= "<div class='warmoo-pro-pop-pic userpicture'>";
         $dataContent .= "<img src='$src' alt='Picture of $user->firstname $user->lastname' title='Picture of $user->firstname $user->lastname' width='90' height='90'>";
@@ -510,7 +509,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $dataContent .= "<li><a  class='btn btn-moo-blue tab-prof-but' href='https://tabula.warwick.ac.uk/profiles/view/" . $universityId . "' target='_blank' role='button'>";
         $dataContent .= "<i class='fa fa-external-link-square'></i> Tabula Profile</a></li>";
         $dataContent .= "</ul>";
-        */
+        
         // Add popover attributes
         $attributes2 = array('tabindex'=>0, 'data-toggle' => 'popover', 'data-content'=>$dataContent, 'title'=>$title);
         
