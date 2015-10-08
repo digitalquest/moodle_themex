@@ -499,7 +499,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
         }
 
         // Build the popover content
-        $title = "<span class='warmoo-pro-pop-stress-main'>$user->firstname $user->lastname</span>";
+        $title = "<i class='fa fa-user fa-lg greypro-icon'></i> <span class='warmoo-pro-pop-stress-main'>$user->firstname $user->lastname</span>";
         $dataContent .= "<div class='warmoo-pro-pop-pic userpicture'>";
         $dataContent .= "<img src='$src' alt='Picture of $user->firstname $user->lastname' title='Picture of $user->firstname $user->lastname' width='90' height='90'>";
         $dataContent .= "</div>";
@@ -511,14 +511,18 @@ class theme_warwickclean_core_renderer extends core_renderer {
         $dataContent .= "</ul>";
         
         // Add popover attributes
-        $attributes2 = array('tabindex'=>0, 'data-toggle' => 'popover', 'data-content'=>$dataContent, 'title'=>$title);
+        $attributes2 = array('tabindex'=>0, 'data-toggle'=>'popover', 'data-content'=>$dataContent, 'title'=>$title); 
+        // the following attributes seem to break the rollover box and have been taken out of $attributes2:
+        //'role'=>'button', 'class'=>'btn btn-lg btn-default', 'data-container'=>'#warmoo-pro-pop', 
         
         // CHECK IF IMAGE SHOULD BE AN HYPERLINK
-        if ($userpicture->link) $attributes = array_merge($attributes, $attributes2); //if it's a link $attributes has been filled
+        if ($userpicture->link) $attributes = array_merge($attributes, $attributes2); //if it's a link $attributes has been pre-filled
         else $attributes = $attributes2;
 
         // Render the entire thing and return
-        $rendered_user_picture = html_writer::tag('a', $output, $attributes);
+        $tmp_output = html_writer::tag('a', $output, $attributes); //write the <a> tag
+        $div_attributes = array('id'=>'warmoo-pro-pop'); // prepare the attributes of the div tag
+        $rendered_user_picture = html_writer::tag('div', $tmp_output, $div_attributes); // surround the <a> tag with a <div> tag
         return $rendered_user_picture;
     }
 
