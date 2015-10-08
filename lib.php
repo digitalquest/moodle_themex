@@ -278,6 +278,10 @@ function theme_warwickclean_page_init(moodle_page $page){
                 return $defaulturl; // It is a member of staff; we return the default URL
             }
 
+            if (empty($user->idnumber)) {
+                return $defaulturl; // University ID is empty; we return the default URL
+            }
+
             if ($this->user->picture == 0) {
                 // Normalise the size variable to acceptable bounds
                 if ($size < 1 || $size > 512) {
