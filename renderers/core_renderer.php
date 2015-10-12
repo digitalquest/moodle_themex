@@ -47,7 +47,12 @@ class theme_warwickclean_core_renderer extends core_renderer {
                 continue; // go to next element
             }
             /**/
-            $breadcrumbs[] = $this->render($item);
+            $a = $this->render($item);
+            if( strpos($a, "view.php" ) !== false  ) {
+              $breadcrumbs[] = "<b>" . $a . "</b>";
+            } else {
+             $breadcrumbs[] = $a;
+            }            
         }
         $divider = '<span class="divider">'.get_separator().'</span>';
         $list_items = '<li>'.join(" $divider</li><li>", $breadcrumbs).'</li>';
