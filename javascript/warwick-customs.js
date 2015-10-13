@@ -44,4 +44,7 @@ $(document).ready(function()
 	});
 	// END 
 	
+
+       // Responsive breadcrumbs (ensure course title doesn't disappear)
+       $("li:has(.coursetitle)").css('display', 'inline');
 });
