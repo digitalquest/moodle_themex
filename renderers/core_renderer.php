@@ -51,9 +51,7 @@ class theme_warwickclean_core_renderer extends core_renderer {
             /**/
             $a = $this->render($item);
             if( strpos($a, "view.php" ) !== false  ) {
-              $item->add_class('coursetitle');
-              $a = $this->render($item);
-              $breadcrumbs[] = "<b>" . $a . "</b>";
+              $breadcrumbs[] = html_writer::div($a, 'coursetitle');
             } else {
               $breadcrumbs[] = $a;
             }            
