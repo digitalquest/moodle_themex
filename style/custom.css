@@ -3308,6 +3308,10 @@ body.category-74 .gradingform_guide .markingguideremark {
   display:none;
 }
 
+.btn-breadcrumb > .coursetitle {
+  display: block;
+}
+
 /* === For phones =================================== */
 @media (max-width: 767px) {
     .breadcrumb  > *:nth-last-child(-n+2) {

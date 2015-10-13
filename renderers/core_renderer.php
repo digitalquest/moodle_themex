@@ -47,11 +47,13 @@ class theme_warwickclean_core_renderer extends core_renderer {
                 continue; // go to next element
             }
             /**/
-            $a = $this->render($item);
             if( strpos($a, "view.php" ) !== false  ) {
+              $a->add_class('coursetitle');
+              $a = $this->render($item);
               $breadcrumbs[] = "<b>" . $a . "</b>";
             } else {
-             $breadcrumbs[] = $a;
+              $a = $this->render($item);
+              $breadcrumbs[] = $a;
             }            
         }
         $divider = '<span class="divider">'.get_separator().'</span>';
