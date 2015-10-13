@@ -46,13 +46,15 @@ class theme_warwickclean_core_renderer extends core_renderer {
                 $breadcrumbs[] = '<a href="/" id="moo-home-button">&nbsp;<i class="fa fa-home fa-lg"></i></a>';
                 continue; // go to next element
             }
+
+              
             /**/
+            $a = $this->render($item);
             if( strpos($a, "view.php" ) !== false  ) {
               $item->add_class('coursetitle');
               $a = $this->render($item);
               $breadcrumbs[] = "<b>" . $a . "</b>";
             } else {
-              $a = $this->render($item);
               $breadcrumbs[] = $a;
             }            
         }
