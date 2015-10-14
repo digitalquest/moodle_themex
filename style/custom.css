@@ -3337,3 +3337,34 @@ body.category-74 .gradingform_guide .markingguideremark {
         max-width: 170px;
     }
 }
+
+/* === Styling responsive breadcrumbs - from Rich ================================== */
+.breadcrumb div.coursetitle a{
+	font-weight:700;
+	background:#fff;
+	color:#2793dd;
+}
+ 
+.breadcrumb div.coursetitle a:hover{
+	font-weight:700;
+	background:#fff;
+	color:#2793dd;
+	text-decoration:underline;
+}
+ 
+.breadcrumb a:hover{
+	text-decoration:underline;
+}
+ 
+.breadcrumb a#moo-home-button:hover{
+	text-decoration:none;
+}
+ 
+ 
+.breadcrumb div.coursetitle a:hover::after {
+    border-left-color: #fff;
+}
+ 
+.breadcrumb div.coursetitle a::after {
+    border-left-color: #fff;
+}
