@@ -14,6 +14,8 @@ $(document).ready(function()
 			hide_notify();
 		}
 	});
+
+	toggle_ellipses();
 	
 	function hide_notify() {
 		$("#id_sendstudentnotifications").val('0') //set value of 'Notify student' to 'No'
@@ -27,8 +29,6 @@ $(document).ready(function()
 	}
 	
 	function toggle_ellipses() {
-		$('#bc1 .breadcrumb-course').show(); // always show course on the breadcrumbs trail
-		//
 		var ellipses1 = $("#ellipses");
 		// var hiddencount = $("#bc1 li:hidden").length;
 		var hiddencount = $('#bc1 li').not('li:nth-child(2)').filter(function() {
@@ -45,7 +45,7 @@ $(document).ready(function()
 			//console.log("hidden count: " + hiddencount + " => show")
 		} else {
 			ellipses1.parent().hide();
-			//	console.log("hidden count: " + hiddencount + " => hide")
+			//console.log("hidden count: " + hiddencount + " => hide")
 		}
 	}
 	// ROLLOVER USER PROFILE BOX
