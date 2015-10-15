@@ -3330,7 +3330,7 @@ body.category-74 .gradingform_guide .markingguideremark {
 
 /* === For desktops ================================== */
 @media (min-width: 992px) {
-    .breadcrumb  > *:nth-last-child(-n+6) {
+    .breadcrumb  > *:nth-last-child(-n+12) {
         display:inline;
     }
     .breadcrumb  > * {
