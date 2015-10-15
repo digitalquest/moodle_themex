@@ -15,6 +15,7 @@ $(document).ready(function()
 		}
 	});
 
+	toggle_ellipses();
 	$(window).resize(function() {toggle_ellipses()})
 	
 	function hide_notify() {
