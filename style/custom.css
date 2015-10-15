@@ -3340,13 +3340,13 @@ body.category-74 .gradingform_guide .markingguideremark {
 
 /* === Styling responsive breadcrumbs - from Rich ================================== */
 .breadcrumb div.coursetitle a{
-	font-weight:700;
+	font-weight:600;
 	background:#fff;
 	color:#2793dd;
 }
  
 .breadcrumb div.coursetitle a:hover{
-	font-weight:700;
+	font-weight:600;
 	background:#fff;
 	color:#2793dd;
 	text-decoration:underline;
