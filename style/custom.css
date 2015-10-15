@@ -244,9 +244,9 @@ div.course_category_tree h1,div.course_category_tree h2,div.course_category_tree
 	line-height:1.2;
 }
 
-/* WMG Category test
+/* WMG Category amends to allow for header image
 -------------------------*/
-#page-course-index-category.category-15  .generalbox.info {
+#page-course-index-category.category-288  .generalbox.info {
 	padding:0px !important;
 	background-color:none !important;
 	font-size:1.0em !important;
@@ -256,9 +256,10 @@ div.course_category_tree h1,div.course_category_tree h2,div.course_category_tree
 }
 
 
-#page-course-index-category.category-15  #page, #page-course-index-category.category-15  .container-fluid,#page-course-index-category.category-15  #wbar-inner,#page-course-index-category.category-15  #page-navbar,#page-course-index-category.category-15  #footer-inner,#page-course-index-category.category-15  #vbot-cont-container{
+#page-course-index-category.category-288  #page, #page-course-index-category.category-288  .container-fluid,#page-course-index-category.category-288  #wbar-inner,#page-course-index-category.category-288  #page-navbar,#page-course-index-category.category-288  #footer-inner,#page-course-index-category.category-288  #vbot-cont-container{
 	max-width:980px; 
 }
+
 
 
 /* Links
