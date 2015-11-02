@@ -2935,16 +2935,17 @@ div.addresourcedropdown option[value*="helixmedia"]{
 }
 	
 
-/*Remove email and dept columns in gradeboook 
+/*Remove email and dept columns in gradeboook UPADTED 301015
 -------------------------*/	
 
-.path-grade-report-grader .left_scroller th.useremail{/* ***removes email column in gradebook across the site****/
+.path-grade-report .gradereport-grader-table  th.useremail{/* ***removes email column in gradebook across the site****/
 	display:none;	
 }
 
-.path-grade-report-grader .left_scroller th.userdepartment {/* ***removes department column in gradebook across the site****/
+.path-grade-report .gradereport-grader-table th.userdepartment {/* ***removes department column in gradebook across the site****/
 	display:none;	
 }
+
 
 /* MediaStream / Helix
 -------------------------*/	
