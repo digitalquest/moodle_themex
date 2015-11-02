@@ -2939,11 +2939,11 @@ div.addresourcedropdown option[value*="helixmedia"]{
 -------------------------*/	
 
 .path-grade-report .gradereport-grader-table  th.useremail{/* ***removes email column in gradebook across the site****/
-	display:none;	
+	/*display:none;	*/
 }
 
 .path-grade-report .gradereport-grader-table th.userdepartment {/* ***removes department column in gradebook across the site****/
-	display:none;	
+	/*display:none;*/	
 }
 
 
