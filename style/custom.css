@@ -2042,10 +2042,10 @@ ul.gtopics-0{
 }
 
 
-#gridshadebox_content h3.sectionname{
+/*#gridshadebox_content h3.sectionname{
 	padding-left:6px;
 }
-
+*/
 .category-31 .course-content ul.gtopics #section-0{ /* *** hides header in grid - done in both Medicine sub categories ****/
 	display:none !important;
 }
@@ -2946,6 +2946,13 @@ div.addresourcedropdown option[value*="helixmedia"]{
 	/*display:none;*/	
 }
 
+.gradereport-grader-table th.header.userfield.userdepartment.cell, th.header.userfield.useremail.cell  {
+	visibility: hidden;
+	width:0px;
+	max-width: 0px;
+	padding:0px;
+}
+
 
 /* MediaStream / Helix
 -------------------------*/	
@@ -3400,12 +3407,12 @@ body.category-74 .gradingform_guide .markingguideremark {
 	border: 1px dotted #d9e5ed;*/
 }
 
-.box.generalbox.boxwidthwide div.no-overflow{
+/*.box.generalbox.boxwidthwide div.no-overflow{
 	padding:10px;
-}
+}*/
 
 #page-mod-feedback-view  .box.generalbox.boxaligncenter.boxwidthwide a{
-	padding:10px;
+	/*padding:10px;*/
 	display:block;
 	font-weight:bold;
 }
