@@ -2946,7 +2946,7 @@ div.addresourcedropdown option[value*="helixmedia"]{
 	/*display:none;*/	
 }
 
-.gradereport-grader-table th.header.userfield.userdepartment.cell, th.header.userfield.useremail.cell  {
+.gradereport-grader-table th.header.userfield.userdepartment.cell, .gradereport-grader-table th.header.userfield.useremail.cell  {
 	visibility: hidden;
 	width:0px;
 	max-width: 0px;
