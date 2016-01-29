@@ -179,7 +179,7 @@ if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
     $THEME->javascripts[] = 'html5shiv';
 }
 
-$THEME->hidefromselector = true;
+$THEME->hidefromselector = false;
 
 
 $THEME->blockrtlmanipulations = array(
