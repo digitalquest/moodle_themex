@@ -3521,3 +3521,13 @@ body.category-74 .gradingform_guide .markingguideremark {
 	margin-left: 20px;
     text-transform: capitalize;
 }
+
+
+/* Break long Words/URLs over seperate lines
+-------------------------*/
+
+#page-message-index .message{
+	word-break: break-word;
+	overflow-wrap: break-word;
+}
+	
