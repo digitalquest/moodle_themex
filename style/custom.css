@@ -3523,11 +3523,15 @@ body.category-74 .gradingform_guide .markingguideremark {
 }
 
 
-/* Break long Words/URLs over seperate lines
+/* Message section - Break long Words/URLs over seperate lines and tidy up
 -------------------------*/
 
 #page-message-index .message{
 	word-break: break-word;
 	overflow-wrap: break-word;
 }
-	
+
+.message .messagearea{
+	clear: left;
+	margin-bottom: 15px;
+}
